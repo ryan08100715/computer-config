@@ -123,8 +123,8 @@ function Install-PackageByWinget {
   param (
     [Parameter(Mandatory)]
     [string]$WingetID,
-    [Parameter(Mandatory)]
-    [boolean]$interactive
+    [ValidateNotNullOrEmpty()]
+    [boolean]$interactive = $false    
   )
 
   if (-not (CheckInstalledByWingetId $WingetID)) {
