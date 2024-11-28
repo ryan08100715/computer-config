@@ -74,6 +74,7 @@ function EnsureAdmin {
     exit
   }  
 }
+
 function GetGithubAssetDownloadUrl {
   param (
     [Parameter(Mandatory)]
@@ -118,9 +119,24 @@ function CheckInstalledByWingetId {
   return $false
 }
 
-if (CheckInstalledByWingetId "AutoHotkey.AutoHotkey1") {
-  Write-Host "套件 - AutoHotkey 已經安裝"
+function Install-PackageByWinget {
+  param (
+    [Parameter(Mandatory)]
+    [string]$WingetID,
+    [Parameter(Mandatory)]
+    [boolean]$interactive
+  )
+
+  if (-not (CheckInstalledByWingetId $WingetID)) {
+    if ($interactive) {
+      winget install -i --id $WingetID      
+    }
+    else {
+      winget install --id $WingetID
+    }
+  }
 }
-else {
-  Write-Host "尚未安裝 AutoHotkey, 即將開始安裝"
+
+function Get-Apps-Directory {
+  return "$env:USERPROFILE\Apps"
 }
