@@ -14,7 +14,7 @@ $fileRegex = "^TrafficMonitor_.*_x64_Lite\.zip$" # 要下載的 Asset 的正則�
 
 $fileName = "TrafficMonitor.zip" # 下載的檔案名稱
 $tempFilePath = (Join-Path $tempFolder.FullName $fileName) # 下載位置
-$appsDir = "$env:USERPROFILE\Apps"
+$appsDir = Get-Apps-Directory
 
 
 # * 下載Asset到臨時文件夹
