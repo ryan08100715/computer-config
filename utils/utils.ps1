@@ -105,3 +105,22 @@ function New-TemporaryDirectory {
 function Get-Startup-Directory {
   return "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 }
+
+function CheckInstalledByWingetId {
+  param (
+    [Parameter(Mandatory)]
+    [string]$WingetID
+  )
+
+  if (winget list --id $WingetID | Select-String -Pattern $WingetID) {
+    return $true
+  }
+  return $false
+}
+
+if (CheckInstalledByWingetId "AutoHotkey.AutoHotkey1") {
+  Write-Host "套件 - AutoHotkey 已經安裝"
+}
+else {
+  Write-Host "尚未安裝 AutoHotkey, 即將開始安裝"
+}
