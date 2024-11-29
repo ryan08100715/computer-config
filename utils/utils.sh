@@ -41,3 +41,24 @@ function command_is_exist() {
     return 1
   fi
 }
+
+function get_github_asset_download_url() {
+  local repo="$1"
+  local asset_name_regex="$2"
+  local github_api_url="https://api.github.com/repos/$repo/releases/latest"
+
+  curl -s "$github_api_url" | jq -r ".assets[] | select(.name | test(\"$asset_name_regex\")) | .browser_download_url"
+}
+
+function create_temp_dir() {
+  mktemp -d
+}
+
+function exit_on_commands_not_exist() {
+  for cmd in "$@"; do
+    if ! command_is_exist "$cmd"; then
+      echo "Error: Command '$cmd' 不存在"
+      exit 1
+    fi
+  done
+}
