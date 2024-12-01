@@ -2,9 +2,9 @@
 
 . $PSScriptRoot\..\..\..\utils\utils.ps1
 
-$PackageName = "WinRAR"
-$WingetPackageID = "RARLab.WinRAR"
+$PackageName = "Google Chrome"
+$WingetPackageID = "Google.Chrome"
 
-# * 安裝 WinRAR
+# * 安裝 Google Chrome
 Write-Host "開始執行 $PackageName 安裝腳本" -ForegroundColor Green
 Install-PackageByWinget $WingetPackageID

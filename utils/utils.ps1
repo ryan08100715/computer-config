@@ -113,7 +113,7 @@ function CheckInstalledByWingetId {
     [string]$WingetID
   )
 
-  if (winget list --id $WingetID | Select-String -Pattern $WingetID) {
+  if (winget list | Select-String -Pattern $WingetID) {
     return $true
   }
   return $false

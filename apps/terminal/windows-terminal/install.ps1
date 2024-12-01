@@ -1,6 +1,6 @@
 #!/usr/bin/env pwsh
 
-. $PSScriptRoot\..\..\utils\utils.ps1
+. $PSScriptRoot\..\..\..\utils\utils.ps1
 
 function Get-Settings {
   # Windows Terminal settings 路徑

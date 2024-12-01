@@ -8,7 +8,7 @@ $PackageName = "Git"
 $WingetPackageID = "Git.Git"
 
 Write-Host "開始執行 $PackageName 安裝腳本" -ForegroundColor Green
-Install-PackageByWinget $WingetPackageID $false
+Install-PackageByWinget $WingetPackageID
 
 Write-Host "開始進行配置"
 $ConfigPath = "$env:USERPROFILE\.gitconfig"
