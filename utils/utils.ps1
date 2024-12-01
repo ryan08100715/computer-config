@@ -140,3 +140,26 @@ function Install-PackageByWinget {
 function Get-Apps-Directory {
   return "$env:USERPROFILE\Apps"
 }
+
+function Test-CommandExist {
+  param (
+    [Parameter(Mandatory)]
+    [string]$Command
+  )
+  
+  return Get-Command $Command -ErrorAction SilentlyContinue
+}
+
+function Exit-WhenCommandNotExist {
+  param(
+    [Parameter(Mandatory)]
+    [string[]]$Commands
+  )
+
+  foreach ($cmd in $Commands) {
+    if (-not (Test-CommandExist $cmd)) {
+      Write-Host "尚未安裝 $cmd"
+      exit 1
+    }
+  }
+}
