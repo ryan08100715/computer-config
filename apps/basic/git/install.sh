@@ -20,7 +20,7 @@ if [[ $distribution == "Ubuntu" ]]; then
   sudo apt-get install -y git
 
   # link config
-  ln -sf "$SCRIPT_DIR/config/config" ~/.gitconfig
+  ln -sf "$SCRIPT_DIR/config/config" "$HOME/.gitconfig"
 else
   echo "不支援的系統: $distribution"
 fi

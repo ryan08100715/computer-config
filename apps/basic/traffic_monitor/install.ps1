@@ -1,9 +1,9 @@
 #!/usr/bin/env pwsh
 
-. $PSScriptRoot\..\..\utils\utils.ps1
+. $PSScriptRoot\..\..\..\utils\utils.ps1
 
 # * 確保以管理員權限執行
-EnsureAdmin
+EnsureAdminRun
 
 # * 產生一個臨時文件夹
 $tempFolder = New-TemporaryDirectory

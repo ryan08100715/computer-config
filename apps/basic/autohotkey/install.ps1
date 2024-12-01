@@ -1,8 +1,8 @@
 #!/usr/bin/env pwsh
 
-. $PSScriptRoot\..\..\utils\utils.ps1
+. $PSScriptRoot\..\..\..\utils\utils.ps1
 
-EnsureAdmin
+EnsureAdminRun
 
 $PackageName = "AutoHotkey"
 $WingetPackageID = "AutoHotkey.AutoHotkey"

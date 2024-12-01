@@ -2,7 +2,7 @@
 
 . $PSScriptRoot\..\..\..\utils\utils.ps1
 
-EnsureAdmin
+EnsureAdminRun
 
 $PackageName = "LSDeluxe"
 $WingetPackageID = "lsd-rs.lsd"

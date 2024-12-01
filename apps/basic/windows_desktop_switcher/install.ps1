@@ -3,7 +3,7 @@
 . $PSScriptRoot\..\..\..\utils\utils.ps1
 
 # * 確保以管理員權限執行
-EnsureAdmin
+EnsureAdminRun
 
 $appsDir = Get-Apps-Directory
 $startupDir = Get-Startup-Directory

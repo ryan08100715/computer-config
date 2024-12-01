@@ -68,7 +68,7 @@ function Update-EnvPath {
   Write-Host "環境 PATH 已更新" -ForegroundColor Green
 }
 
-function EnsureAdmin {
+function EnsureAdminRun {
   if (-not (IsAdministrator)) {
     Write-MyError "腳本沒有以管理員權限執行，請以管理員身分重新執行！"
     exit
