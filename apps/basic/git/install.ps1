@@ -16,4 +16,4 @@ $ConfigPath = "$env:USERPROFILE\.gitconfig"
 if (Test-Path $ConfigPath) {
   Move-Item $ConfigPath "$ConfigPath.backup" -Force
 }
-New-Item -ItemType SymbolicLink -Path $ConfigPath -Target "$PSScriptRoot\config"
+New-Item -ItemType SymbolicLink -Path $ConfigPath -Target "$PSScriptRoot\config\config"
