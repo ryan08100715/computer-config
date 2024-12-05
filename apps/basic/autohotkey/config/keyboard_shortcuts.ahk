@@ -37,7 +37,7 @@ IsGameWindow() {
 ; 視窗控制
 ; #PgUp::WinMaximize, A ;
 ; #PgDn::WinMinimize, A ;
-^q::WinClose, A ;
+#q::WinClose, A ;
 
 #If  ; 結束條件塊
 
