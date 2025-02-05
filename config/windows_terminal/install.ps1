@@ -148,13 +148,6 @@ function Set-AllProfileThemeAndFont {
   return $Settings
 }
 
-$PackageName = "WindowsTerminal"
-$WingetPackageID = "Microsoft.WindowsTerminal"
-
-# * 安裝 WindowsTerminal
-Write-Host "開始執行 $PackageName 安裝腳本" -ForegroundColor Green
-Install-PackageByWinget $WingetPackageID
-
 # * 配置設定檔
 $settings = Get-Settings
 
