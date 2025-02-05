@@ -7,16 +7,24 @@ function Install-MyWinGetPackage {
     [Parameter(Mandatory)]
     [string]$PackageName,
     [Parameter(Mandatory)]
-    [string]$WingetPackageID
+    [string]$WingetPackageID,
+    [switch]$Interactive
   )
 
   $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption Equals
 
+  # 安裝或更新的參數
+  $params = @{}
+  if ($Interactive) {
+    $params['Mode'] = "Interactive"
+  }
+    
   # 檢查是否已經安裝
   if ($null -eq $Package) {
     Write-MyInfo "$PackageName 尚未安裝，開始進行安裝"
   
-    $InstallInfo = Install-WinGetPackage -Id $WingetPackageID
+    $InstallInfo = Install-WinGetPackage -Id $WingetPackageID @params
+    $InstallInfo
 
     if ("Ok" -eq $InstallInfo.Status) {
       Write-MySuccess -Icon "安裝完成"
@@ -33,7 +41,7 @@ function Install-MyWinGetPackage {
     if ($Package.IsUpdateAvailable) {
       Write-MyWarning -Icon "有新版本可供安裝，開始進行更新"
 
-      $UpdateInfo = Update-WinGetPackage -Id $WingetPackageID
+      $UpdateInfo = Update-WinGetPackage -Id $WingetPackageID @params
 
       if ("Ok" -eq $UpdateInfo.Status) {
         Write-MySuccess -Icon "更新完成"
