@@ -6,8 +6,8 @@
 $PackageName = "PowerShell"
 $WingetPackageID = "Microsoft.PowerShell"
 
-Write-MyInfo "開始執行 $PackageName 安裝腳本..."
+Write-MyInfo "開始執行 $PackageName 解除安裝腳本..."
 
-Install-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
+Uninstall-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
 
 Write-MyInfo ""
