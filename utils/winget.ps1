@@ -10,7 +10,7 @@ function Install-MyWinGetPackage {
     [string]$WingetPackageID
   )
 
-  $Package = Get-WinGetPackage -Query $WingetPackageID -Id $WingetPackageID
+  $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption Equals
 
   # 檢查是否已經安裝
   if ($null -eq $Package) {
@@ -57,7 +57,7 @@ function Uninstall-MyWinGetPackage {
     [string]$WingetPackageID
   )
 
-  $Package = Get-WinGetPackage -Query $WingetPackageID -Id $WingetPackageID
+  $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption Equals
 
   # 檢查是否已經安裝
   if ($null -eq $Package) {
