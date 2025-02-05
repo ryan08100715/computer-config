@@ -1,61 +1,6 @@
 #!/usr/bin/env pwsh
 
-function Write-MySuccess {
-  param (
-    [Parameter(Mandatory)]
-    [string]$Message
-  )
-
-  $greenCheck = @{
-    Object          = [Char]10003
-    ForegroundColor = 'Green'
-    NoNewLine       = $true
-  }
-  
-  Write-Host @greenCheck
-  Write-Host " $Message"
-}
-
-function Write-MyWarning {
-  param (
-    [Parameter(Mandatory)]
-    [string]$Message
-  )
-
-  $yellowExclamation = @{
-    Object          = [Char]33
-    ForegroundColor = 'Yellow'
-    NoNewLine       = $true
-  }
-  
-  Write-Host @yellowExclamation
-  Write-Host " $Message"
-}
-
-function Write-MyError {
-  param (
-    [Parameter(Mandatory)]
-    [string]$Message
-  )
-
-  $redCross = @{
-    Object          = [Char]10007
-    ForegroundColor = 'Red'
-    NoNewLine       = $true
-  }
-  
-  Write-Host @redCross
-  Write-Host " $Message"
-}
-
-function Write-MySecondList {
-  param (
-    [Parameter(Mandatory)]
-    [string]$Message
-  )
-  
-  Write-Host "  - $Message"
-}
+. $PSScriptRoot\output.ps1
 
 function IsAdministrator {
   $currentPrincipal = [System.Security.Principal.WindowsIdentity]::GetCurrent()
@@ -65,7 +10,7 @@ function IsAdministrator {
 
 function Update-EnvPath {
   $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path", "User")
-  Write-Host "環境 PATH 已更新" -ForegroundColor Green
+  Write-MySuccess -Icon "環境變數已更新"
 }
 
 function EnsureAdminRun {
@@ -158,7 +103,7 @@ function Exit-WhenCommandNotExist {
 
   foreach ($cmd in $Commands) {
     if (-not (Test-CommandExist $cmd)) {
-      Write-Host "尚未安裝 $cmd"
+      Write-MyError "尚未安裝依賴: $cmd"
       exit 1
     }
   }

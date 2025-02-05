@@ -8,24 +8,27 @@ function Install-MyWinGetPackage {
     [string]$PackageName,
     [Parameter(Mandatory)]
     [string]$WingetPackageID,
-    [switch]$Interactive
+    [switch]$Interactive,
+    [switch]$SkipDependencies
   )
 
-  $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption Equals
+  $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption ContainsCaseInsensitive
 
   # 安裝或更新的參數
   $params = @{}
   if ($Interactive) {
     $params['Mode'] = "Interactive"
   }
+  if ($SkipDependencies) {
+    $params['SkipDependencies'] = $true
+  }
     
   # 檢查是否已經安裝
   if ($null -eq $Package) {
     Write-MyInfo "$PackageName 尚未安裝，開始進行安裝"
   
-    $InstallInfo = Install-WinGetPackage -Id $WingetPackageID @params
-    $InstallInfo
-
+    $InstallInfo = Install-WinGetPackage -Id $WingetPackageID -MatchOption Equals @params
+    
     if ("Ok" -eq $InstallInfo.Status) {
       Write-MySuccess -Icon "安裝完成"
     }
@@ -41,7 +44,7 @@ function Install-MyWinGetPackage {
     if ($Package.IsUpdateAvailable) {
       Write-MyWarning -Icon "有新版本可供安裝，開始進行更新"
 
-      $UpdateInfo = Update-WinGetPackage -Id $WingetPackageID @params
+      $UpdateInfo = Update-WinGetPackage -Id $WingetPackageID -MatchOption ContainsCaseInsensitive @params
 
       if ("Ok" -eq $UpdateInfo.Status) {
         Write-MySuccess -Icon "更新完成"
@@ -65,14 +68,14 @@ function Uninstall-MyWinGetPackage {
     [string]$WingetPackageID
   )
 
-  $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption Equals
+  $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption ContainsCaseInsensitive
 
   # 檢查是否已經安裝
   if ($null -eq $Package) {
     Write-MyError -Icon "$PackageName 尚未安裝"
   }
   else {
-    $UninstallInfo = Uninstall-WinGetPackage -Id $WingetPackageID
+    $UninstallInfo = Uninstall-WinGetPackage -Id $WingetPackageID -MatchOption ContainsCaseInsensitive
 
     if ("Ok" -eq $UninstallInfo.Status) {
       Write-MySuccess -Icon "解除安裝完成"
