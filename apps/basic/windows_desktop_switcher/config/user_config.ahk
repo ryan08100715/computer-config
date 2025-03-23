@@ -25,11 +25,6 @@
 ; === Global keyword shortcut ===
 ; ===============================
 
-
-; ======================================
-; === END OF Global keyword shortcut ===
-; ======================================
-
 #1::switchDesktopByNumber(1)
 #2::switchDesktopByNumber(2)
 #3::switchDesktopByNumber(3)
@@ -51,6 +46,10 @@
 #+8::MoveCurrentWindowToDesktop(8)
 #+9::MoveCurrentWindowToDesktop(9)
 #+0::MoveCurrentWindowToDesktop(10)
+
+; ======================================
+; === END OF Global keyword shortcut ===
+; ======================================
 
 ; === INSTRUCTIONS ===
 ; Below is the alternate key configuration. Delete symbol ; in the beginning of the line to enable.
@@ -108,8 +107,6 @@
 
 ; ^#Right::MoveCurrentWindowToRightDesktop()
 ; ^#Left::MoveCurrentWindowToLeftDesktop()
-
-
 
 ; === INSTRUCTIONS ===
 ; Additional alternative shortcut for moving current window to left or right desktop (ctrl+shift+Win+left/right)

@@ -12,6 +12,37 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned
 
 ## 使用方法
 
-1. 先執行 prerequisites.ps1 安裝必要模組
+所有腳本以系統管理員執行
 
-2. 
+### 1. 更改Winget網路設定(Optional)
+
+> 將 downloader 配置為 wininet 可能有助於提高 winget 下載速度
+
+步驟1: 使用 winget config 打開配置檔
+
+步驟2: 添加以下配置
+```
+"network": {
+  "downloader": "wininet"
+}
+```
+
+### 2. 安裝必要模組
+
+執行 prerequisites.ps1 安裝必要模組
+
+### 3. 執行系統設置腳本
+
+Windows11 系統設置腳本執行後需手動設置的選項：
+
+1. 本地帳號頭像
+2. 調整開始選單的建議項目
+3. 調整工作列的釘選項目
+
+### 4. 根據需求執行對應腳本
+
+1. platform_setup 資料夾下根據作業系統跟使用環境，提供一組預定義好的環境設置腳本
+
+2. apps、personalization、services 資料夾提供個別的腳本，可以單獨執行
+
+### 5. WSL 發行版請重新開機後在進行安裝

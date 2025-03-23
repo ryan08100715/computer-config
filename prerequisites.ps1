@@ -14,4 +14,17 @@ function Install-WinGetModule {
   Install-Module -Name Microsoft.WinGet.Client
 }
 
-Install-WinGetModule
+function Install-VirtualDesktopModule {
+  # 檢查 VirtualDesktop 模組是否已安裝
+  if (Get-InstalledModule -Name VirtualDesktop -ErrorAction SilentlyContinue) {
+    Write-MyWarning "VirtualDesktop 模組已安裝"
+    return
+  }
+
+  # 安裝 VirtualDesktop 模組
+  Write-MyInfo "安裝 VirtualDesktop 模組..."
+  Install-Module -Name VirtualDesktop
+}
+
+# Install-WinGetModule
+Install-VirtualDesktopModule

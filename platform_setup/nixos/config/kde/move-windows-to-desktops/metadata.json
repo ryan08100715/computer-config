@@ -1,0 +1,18 @@
+{
+    "KPlugin": {
+        "Name": "Move Windows to Desktops",
+        "Description": "Move windows to desktops, switching desktop when moving.",
+        "Icon": "preferences-system-windows-script-test",
+
+        "Authors": [
+            {
+                "Name": "carmanaught"
+            }
+        ],
+        "Id": "move-windows-to-desktops",
+        "Version": "1.1"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}

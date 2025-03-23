@@ -11,6 +11,6 @@ Write-MyInfo "開始執行 $PackageName 安裝腳本..."
 
 Update-EnvPath
 Exit-WhenCommandNotExist -Command ffmpeg
-Install-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID -SkipDependencies
+Install-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
 
 Write-MyInfo ""

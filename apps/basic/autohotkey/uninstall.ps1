@@ -1,13 +1,20 @@
 #!/usr/bin/env pwsh
 
 . $PSScriptRoot\..\..\..\utils\output.ps1
+. $PSScriptRoot\..\..\..\utils\utils.ps1
 . $PSScriptRoot\..\..\..\utils\winget.ps1
 
 $PackageName = "AutoHotkey"
-$WingetPackageID = "AutoHotkey.AutoHotkey"
 
 Write-MyInfo "開始執行 $PackageName 解除安裝腳本..."
 
-Uninstall-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
+$osInfo = Get-MyOSInfo
 
-Write-MyInfo ""
+if ($osInfo.OS -eq 'windows') {
+  $WingetPackageID = "AutoHotkey.AutoHotkey"
+
+  Uninstall-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
+}
+else {
+  Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
+}

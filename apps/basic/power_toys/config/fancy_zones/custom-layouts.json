@@ -1,0 +1,31 @@
+{
+  "custom-layouts": [
+    {
+      "uuid": "{1E2E956C-7D99-4622-ACCF-B659F94BA127}",
+      "name": "\u81EA\u8A02\u7248\u9762\u914D\u7F6E 1",
+      "type": "grid",
+      "info": {
+        "rows": 2,
+        "columns": 1,
+        "rows-percentage": [
+          1535,
+          8465
+        ],
+        "columns-percentage": [
+          10000
+        ],
+        "cell-child-map": [
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "show-spacing": false,
+        "spacing": 16,
+        "sensitivity-radius": 20
+      }
+    }
+  ]
+}

@@ -17,29 +17,7 @@ function EnsureAdminRun {
   if (-not (IsAdministrator)) {
     Write-MyError "腳本沒有以管理員權限執行，請以管理員身分重新執行！"
     exit
-  }  
-}
-
-function GetGithubAssetDownloadUrl {
-  param (
-    [Parameter(Mandatory)]
-    [string]$RepoName,
-    [Parameter(Mandatory)]
-    [string]$AssetRegex
-  )
-  
-  $github_api_url = "https://api.github.com/repos/$RepoName/releases/latest"
-
-  $response = Invoke-RestMethod -Uri $github_api_url
-  $assets = $response.assets | Where-Object { $_.name -match $AssetRegex }
-
-  Write-Host $assets.count
-
-  if ($assets.count -eq 0) {
-    return false
   }
-
-  return $assets[0].browser_download_url
 }
 
 function New-TemporaryDirectory {
@@ -48,8 +26,12 @@ function New-TemporaryDirectory {
   New-Item -ItemType Directory -Path (Join-Path $parent $name)
 }
 
-function Get-Startup-Directory {
+function Get-StartupDirectoryPath {
   return "$env:USERPROFILE\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+}
+
+function Get-MyAppsDirectoryPath {
+  return "$env:USERPROFILE\Apps"
 }
 
 function CheckInstalledByWingetId {
@@ -69,12 +51,12 @@ function Install-PackageByWinget {
     [Parameter(Mandatory)]
     [string]$WingetID,
     [ValidateNotNullOrEmpty()]
-    [boolean]$interactive = $false    
+    [boolean]$interactive = $false
   )
 
   if (-not (CheckInstalledByWingetId $WingetID)) {
     if ($interactive) {
-      winget install -i --id $WingetID      
+      winget install -i --id $WingetID
     }
     else {
       winget install --id $WingetID
@@ -82,16 +64,12 @@ function Install-PackageByWinget {
   }
 }
 
-function Get-Apps-Directory {
-  return "$env:USERPROFILE\Apps"
-}
-
 function Test-CommandExist {
   param (
     [Parameter(Mandatory)]
     [string]$Command
   )
-  
+
   return Get-Command $Command -ErrorAction SilentlyContinue
 }
 
@@ -106,5 +84,34 @@ function Exit-WhenCommandNotExist {
       Write-MyError "尚未安裝依賴: $cmd"
       exit 1
     }
+  }
+}
+
+function Get-MyOSInfo {
+  if ($IsWindows) {
+    $osVersion = (Get-CimInstance -ClassName Win32_OperatingSystem).Version
+
+    return [PSCustomObject]@{
+      OS      = 'windows'
+      Version = $osVersion
+    }
+  }
+  elseif ($IsLinux) {
+    $osInfo = Get-Content /etc/os-release | ConvertFrom-StringData
+
+    return [PSCustomObject]@{
+      OS      = $osInfo.ID
+      Version = $osInfo.VERSION_ID.Trim('"')
+    }
+  }
+  elseif ($IsMacOS) {
+    return [PSCustomObject]@{
+      OS      = 'macos'
+      Version = 'unknown'
+    }
+  }
+  else {
+    Write-MyError -Icon "無法辨識作業系統"
+    exit 1
   }
 }

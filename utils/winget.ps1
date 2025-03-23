@@ -2,62 +2,84 @@
 
 . $PSScriptRoot\output.ps1
 
+function Test-WinGetPackageInstalled {
+  param (
+    [Parameter(Mandatory)]
+    [string]$WingetPackageID
+  )
+
+  return $null -ne (winget list | Select-String -SimpleMatch "$WingetPackageID")
+}
+
+function Test-WinGetPackageIsUpdateAvailable {
+  param (
+    [Parameter(Mandatory)]
+    [string]$WingetPackageID
+  )
+
+  return $null -ne (winget upgrade | Select-String -SimpleMatch "$WingetPackageID")
+}
+
 function Install-MyWinGetPackage {
   param (
     [Parameter(Mandatory)]
     [string]$PackageName,
     [Parameter(Mandatory)]
     [string]$WingetPackageID,
+    [string]$Version,
     [switch]$Interactive,
-    [switch]$SkipDependencies
+    [switch]$NoUpgrade,
+    [switch]$Silent
   )
-
-  $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption ContainsCaseInsensitive
+  $Interactive = $true
 
   # 安裝或更新的參數
-  $params = @{}
+  $options = @()
   if ($Interactive) {
-    $params['Mode'] = "Interactive"
+    $options += "--interactive"
   }
-  if ($SkipDependencies) {
-    $params['SkipDependencies'] = $true
-  }
-    
+
   # 檢查是否已經安裝
-  if ($null -eq $Package) {
-    Write-MyInfo "$PackageName 尚未安裝，開始進行安裝"
-  
-    $InstallInfo = Install-WinGetPackage -Id $WingetPackageID -MatchOption Equals @params
-    
-    if ("Ok" -eq $InstallInfo.Status) {
-      Write-MySuccess -Icon "安裝完成"
+  if (-not (Test-WinGetPackageInstalled -WingetPackageID $WingetPackageID) ) {
+    Write-MyInfo "$PackageName 尚未安裝，開始進行安裝" -Silent:$Silent
+
+    if ($Version) {
+      $options += "--version", "$Version"
+    }
+
+    $command = "winget install --id $WingetPackageID " + ($options -join " ")
+    if ($Silent) {
+      Invoke-Expression $command | Out-Null
     }
     else {
-      Write-MyError -Icon "安裝失敗"
-      $InstallInfo
+      Invoke-Expression $command
     }
+    Write-MySuccess -Icon "安裝完成" -Silent:$Silent
   }
   else {
-    Write-MySuccess -Icon "$PackageName 已安裝"
+    Write-MySuccess -Icon "$PackageName 已安裝" -Silent:$Silent
 
-    Write-MyInfo "檢查是否需要更新"
-    if ($Package.IsUpdateAvailable) {
-      Write-MyWarning -Icon "有新版本可供安裝，開始進行更新"
+    if ($NoUpgrade) {
+      return
+    }
 
-      $UpdateInfo = Update-WinGetPackage -Id $WingetPackageID -MatchOption ContainsCaseInsensitive @params
+    Write-MyInfo "檢查是否需要更新" -Silent:$Silent
+    if ((Test-WinGetPackageIsUpdateAvailable -WingetPackageID $WingetPackageID)) {
+      Write-MyWarning -Icon "有新版本可供安裝，開始進行更新" -Silent:$Silent
 
-      if ("Ok" -eq $UpdateInfo.Status) {
-        Write-MySuccess -Icon "更新完成"
+      $command = "winget upgrade --id $WingetPackageID " + ($options -join " ")
+      if ($Silent) {
+        Invoke-Expression $command | Out-Null
       }
       else {
-        Write-MyError -Icon "更新失敗"
-        $UpdateInfo
+        Invoke-Expression $command
       }
+      Write-MySuccess -Icon "更新完成" -Silent:$Silent
     }
     else {
-      Write-MySuccess -Icon "已經是最新版本"
+      Write-MySuccess -Icon "已經是最新版本" -Silent:$Silent
     }
-  }  
+  }
 }
 
 function Uninstall-MyWinGetPackage {
@@ -65,24 +87,39 @@ function Uninstall-MyWinGetPackage {
     [Parameter(Mandatory)]
     [string]$PackageName,
     [Parameter(Mandatory)]
-    [string]$WingetPackageID
+    [string]$WingetPackageID,
+    [switch]$Silent
   )
 
-  $Package = Get-WinGetPackage -Id $WingetPackageID -MatchOption ContainsCaseInsensitive
-
   # 檢查是否已經安裝
-  if ($null -eq $Package) {
-    Write-MyError -Icon "$PackageName 尚未安裝"
+  if (-not (Test-WinGetPackageInstalled -WingetPackageID $WingetPackageID)) {
+    Write-MyError -Icon "$PackageName 尚未安裝" -Silent:$Silent
+    return
+  }
+
+  # 解除安裝
+  if ($Silent) {
+    winget uninstall --id $WingetPackageID | Out-Null
   }
   else {
-    $UninstallInfo = Uninstall-WinGetPackage -Id $WingetPackageID -MatchOption ContainsCaseInsensitive
+    winget uninstall --id $WingetPackageID
+  }
+  Write-MySuccess -Icon "解除安裝完成" -Silent:$Silent
+}
 
-    if ("Ok" -eq $UninstallInfo.Status) {
-      Write-MySuccess -Icon "解除安裝完成"
-    }
-    else {
-      Write-MyError -Icon "解除安裝失敗"
-      $UninstallInfo
-    }
+function Pin-MyWinGetPackage {
+  param (
+    [Parameter(Mandatory)]
+    [string]$WingetPackageID,
+    [Parameter(Mandatory)]
+    [string]$PinVersion,
+    [switch]$Silent
+  )
+
+  if ($Silent) {
+    winget pin add --id $WingetPackageID --version "$PinVersion" --force | Out-Null
+  }
+  else {
+    winget pin add --id $WingetPackageID --version "$PinVersion" --force
   }
 }

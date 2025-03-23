@@ -1,13 +1,25 @@
 #!/usr/bin/env pwsh
 
 . $PSScriptRoot\..\..\..\utils\utils.ps1
+. $PSScriptRoot\..\..\..\utils\output.ps1
+. $PSScriptRoot\..\..\..\utils\github.ps1
 
-# * 確保以管理員權限執行
-EnsureAdminRun
+$PackageName = "Windows Desktop Switcher"
 
-$appsDir = Get-Apps-Directory
-$startupDir = Get-Startup-Directory
+Write-MyInfo "開始執行 $PackageName 安裝腳本..."
+
+Update-EnvPath
+Exit-WhenCommandNotExist -Command git
+
+$appsDir = Get-MyAppsDirectoryPath
 $dirName = "windows-desktop-switcher"
+$windowsDesktopSwitcherDir = Join-Path $appsDir $dirName
+
+# 檢查是否已經安裝
+if (Test-Path $windowsDesktopSwitcherDir) {
+  Write-MyWarning -Icon "$PackageName 已安裝，若要重新安裝請手動刪除資料夾: $windowsDesktopSwitcherDir"
+  exit
+}
 
 # * 產生一個臨時文件夹
 $tempFolder = New-TemporaryDirectory
@@ -16,18 +28,15 @@ $tempFolder = New-TemporaryDirectory
 git clone https://github.com/pmb6tz/windows-desktop-switcher.git "$tempFolder\$dirName"
 
 # * 下載最新的 VirtualDesktopAccessor.dll
-$url = GetGithubAssetDownloadUrl "Ciantic/VirtualDesktopAccessor" "^VirtualDesktopAccessor\.dll$"
-Invoke-WebRequest -Uri $url -OutFile "$tempFolder\VirtualDesktopAccessor.dll"
+$metadata = Get-GithubFileMetadata -RepoName "Ciantic/VirtualDesktopAccessor" -FileRegex "^VirtualDesktopAccessor\.dll$"
+Invoke-WebRequest -Uri $metadata.DownloadUrl -OutFile "$tempFolder\VirtualDesktopAccessor.dll"
 
 # * 移動專案
-Move-Item -Force -Path "$tempFolder\VirtualDesktopAccessor.dll" -Destination "$tempFolder\$dirName\VirtualDesktopAccessor.dll"
 Move-Item -Force -Path "$tempFolder\$dirName" -Destination $appsDir
-
-# * 配置設定檔
-New-Item -ItemType SymbolicLink -Force -Path "$appsDir\$dirName\user_config.ahk" -Target "$PSScriptRoot\config\user_config.ahk"
-
-# * 配置啟動執行
-New-Item -ItemType SymbolicLink -Force -Path "$startupDir\desktop_switcher.ahk" -Target "$appsDir\$dirName\desktop_switcher.ahk"
+Move-Item -Force -Path "$tempFolder\VirtualDesktopAccessor.dll" -Destination "$windowsDesktopSwitcherDir\VirtualDesktopAccessor.dll"
 
 # * 刪除臨時文件夹
 Remove-Item $tempFolder -Recurse -Force
+
+Write-MySuccess -Icon "安裝完成"
+Write-MyInfo ""

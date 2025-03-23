@@ -2,8 +2,11 @@
 
 function Write-MyInfo {
   param (
-    [string]$Message
+    [string]$Message,
+    [switch]$Silent
   )
+
+  if ($Silent) { return }
 
   Write-Host $Message
 }
@@ -11,8 +14,11 @@ function Write-MyInfo {
 function Write-MySuccess {
   param (
     [string]$Message,
-    [switch]$Icon = $false
+    [switch]$Icon,
+    [switch]$Silent
   )
+
+  if ($Silent) { return }
 
   $greenCheck = @{
     Object          = [Char]10003
@@ -24,15 +30,18 @@ function Write-MySuccess {
     Write-Host @greenCheck
     Write-Host -NoNewline " "
   }
-  
+
   Write-Host -ForegroundColor Green $Message
 }
 
 function Write-MyWarning {
   param (
     [string]$Message,
-    [switch]$Icon = $false
+    [switch]$Icon,
+    [switch]$Silent
   )
+
+  if ($Silent) { return }
 
   $yellowWarning = @{
     Object          = [Char]9888
@@ -51,8 +60,11 @@ function Write-MyWarning {
 function Write-MyError {
   param (
     [string]$Message,
-    [switch]$Icon = $false
+    [switch]$Icon,
+    [switch]$Silent
   )
+
+  if ($Silent) { return }
 
   $redCross = @{
     Object          = [Char]10007
@@ -64,6 +76,6 @@ function Write-MyError {
     Write-Host @redCross
     Write-Host -NoNewline " "
   }
-  
+
   Write-Host -ForegroundColor Red $Message
 }
