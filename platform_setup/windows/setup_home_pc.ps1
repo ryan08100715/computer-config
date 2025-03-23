@@ -86,7 +86,6 @@ $apps = @(
 
   # * PHP 開發環境
   'apps\wsl\install.ps1'
-  'apps\wsl\install_PHP.ps1'
 
   # * Jellyfin 服務
   'apps\virtualization\docker_desktop\install.ps1'
