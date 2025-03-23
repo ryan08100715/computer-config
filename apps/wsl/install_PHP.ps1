@@ -1,9 +1,19 @@
 #!/usr/bin/env pwsh
 
-$wslDir = "$env:USERPROFILE\wsl"
+. $PSScriptRoot\..\..\utils\wsl.ps1
 
+# 下載 Ubuntu 24.04 image
+$downloadImageOptions = @{
+  ImageUri = "https://cloud-images.ubuntu.com/wsl/releases/24.04/current/ubuntu-noble-wsl-amd64-wsl.rootfs.tar.gz"
+  FileName = "ubuntu_2404.tar.gz"
+}
+Download-WSLImage @downloadImageOptions
+
+# 註冊 WSL
+$wslDir = "$env:USERPROFILE\wsl"
 if (!(Test-Path $wslDir)) {
   New-Item -ItemType Directory -Path $wslDir
 }
+$wslImagePath = "$(Get-WSLImageDirectory)\$($downloadImageOptions.FileName)"
 
-wsl --import Ubuntu_PHP "$wslDir\ubuntu_php" "$PSScriptRoot\distros\ubuntu_2404.tar"
+wsl --import Ubuntu_PHP "$wslDir\ubuntu_php" "$wslImagePath"
