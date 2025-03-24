@@ -31,7 +31,6 @@ function Install-MyWinGetPackage {
     [switch]$NoUpgrade,
     [switch]$Silent
   )
-  $Interactive = $true
 
   # 安裝或更新的參數
   $options = @(
