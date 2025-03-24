@@ -34,7 +34,10 @@ function Install-MyWinGetPackage {
   $Interactive = $true
 
   # 安裝或更新的參數
-  $options = @()
+  $options = @(
+    "--accept-source-agreements"
+    "--accept-package-agreements"
+  )
   if ($Interactive) {
     $options += "--interactive"
   }
