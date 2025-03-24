@@ -27,6 +27,7 @@ function Install-MyWinGetPackage {
     [Parameter(Mandatory)]
     [string]$WingetPackageID,
     [string]$Version,
+    [string]$Override,
     [switch]$Interactive,
     [switch]$NoUpgrade,
     [switch]$Silent
@@ -47,6 +48,9 @@ function Install-MyWinGetPackage {
 
     if ($Version) {
       $options += "--version", "$Version"
+    }
+    if ($Override) {
+      $options += "--override", "`"$Override`""
     }
 
     $command = "winget install --id $WingetPackageID " + ($options -join " ")
