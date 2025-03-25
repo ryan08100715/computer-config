@@ -3,3 +3,5 @@
     email = "git@ryanwsy.simplelogin.com"
 [init]
 	defaultBranch = main
+[core]
+    autocrlf = input
