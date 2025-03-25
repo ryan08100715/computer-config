@@ -32,6 +32,7 @@ $apps = @(
   'apps\basic\winrar\install.ps1'
   'apps\basic\autohotkey\install.ps1'
   'apps\basic\power_toys\install.ps1'
+  'apps\basic\power_toys\config_setup.ps1'
   'apps\basic\snipaste\install.ps1'
 
   # * 資料同步
