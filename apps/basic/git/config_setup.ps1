@@ -9,6 +9,6 @@ Write-MyInfo "開始進行 Git 配置..."
 EnsureAdminRun
 
 # * 配置設定檔
-New-Item -ItemType SymbolicLink -Force -Path "$HOME\.gitconfig" -Target "$PSScriptRoot\config\config" | Out-Null
+Copy-Item -Force -Path "$PSScriptRoot\config\config" -Destination "$HOME\.gitconfig"
 
 Write-MySuccess -Icon "Git 配置完成"
