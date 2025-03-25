@@ -157,8 +157,8 @@ function Set-KeyBindings {
     [Parameter(Mandatory)]
     [object]$Settings
   )
-  if ($null -eq $Settings.keybindings) {
-    $Settings.keybindings = @()
+  if (-not $Settings.keybindings) {
+    Add-Member -InputObject $Settings -NotePropertyName "keybindings" -NotePropertyValue @()
   }
 
   # 要綁定的客製化快捷鍵
