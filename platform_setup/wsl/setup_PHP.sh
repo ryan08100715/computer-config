@@ -22,6 +22,7 @@ sudo apt-get install -y php8.3-xdebug php8.3-zip
 
 # * 安裝 Composer
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+echo 'export PATH="$HOME/.config/composer/vendor/bin:$PATH"' >>~/.bashrc
 
 # * 安裝 Laravel
 composer global require "laravel/installer"
@@ -31,7 +32,5 @@ composer global require "laravel/installer"
 # Download and install fnm:
 curl -o- https://fnm.vercel.app/install | bash
 
-source "$HOME/.bashrc"
-
 # Download and install Node.js:
-fnm install 22
+bash -i -c "fnm install 22"
