@@ -46,3 +46,10 @@ Windows11 系統設置腳本執行後需手動設置的選項：
 2. apps、personalization、services 資料夾提供個別的腳本，可以單獨執行
 
 ### 5. WSL 發行版請重新開機後在進行安裝
+
+## Q&A
+
+### Winget 下載速度很慢
+
+1. 請嘗試將 winget config 的 downloader 設置成 "wininet"
+2. 如果還是不行，可以使用 Cloudflare WARP VPN
