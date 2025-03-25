@@ -22,6 +22,9 @@ $personalizations = @(
 
   # * 釘選家目錄到快速存取
   'personalization\pin_home_to_file_manager\setup.ps1'
+
+  # * 字型
+  'personalization\fonts\setup.ps1'
 )
 
 $apps = @(
@@ -30,9 +33,6 @@ $apps = @(
   'apps\basic\autohotkey\install.ps1'
   'apps\basic\power_toys\install.ps1'
   'apps\basic\snipaste\install.ps1'
-
-  # * 字型
-  'personalization\fonts\setup.ps1'
 
   # * 資料同步
   'apps\cloud_storage\google_driver\install.ps1'
@@ -74,6 +74,9 @@ $apps = @(
 
   # * 常用開發工具
   'apps\virtualization\docker_desktop\install.ps1'
+  'apps\misc\bruno\install.ps1'
+  'apps\misc\drawio\install.ps1'
+  'apps\database_manager_tools\heidisql\install.ps1'
 
   # * Twitch 實況下載工作流程
   'apps\terminal_tools\ytdlp\install.ps1'
