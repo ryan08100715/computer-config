@@ -3,33 +3,12 @@
 #Requires -RunAsAdministrator
 
 . $PSScriptRoot\..\utils\output.ps1
+. $PSScriptRoot\..\utils\registry.ps1
 
 function Sync-ImagesDirectory {
   $imagesDir = "$HOME\images"
   New-Item -ItemType SymbolicLink -Path "$imagesDir" -Target "$PSScriptRoot\images" -Force | Out-Null
   Write-MySuccess -Icon "同步 $imagesDir 資料夾"
-}
-
-function Set-Registry {
-  param (
-    $Path,
-    $Name,
-    $Value,
-    $Type
-  )
-
-  # 如果路徑不存在，創建它
-  if (-not (Test-Path $Path)) {
-    New-Item -Path $Path | Out-Null
-  }
-
-  # 如果 Name 不存在則建立，存在則更新
-  if ($null -eq (Get-ItemProperty -Path $Path -Name $Name -ErrorAction SilentlyContinue)) {
-    New-ItemProperty -Path $Path -Name $Name -Value $Value -PropertyType $Type | Out-Null
-  }
-  else {
-    Set-ItemProperty -Path $Path -Name $Name -Value $Value | Out-Null
-  }
 }
 
 function Set-SystemAudio {
