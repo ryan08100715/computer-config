@@ -13,6 +13,34 @@ function Update-EnvPath {
   Write-MySuccess -Icon "環境變數已更新"
 }
 
+function Add-EnvPath() {
+  param(
+    [Parameter(Mandatory = $true)]
+    [string]$Path
+  )
+
+  if (-not (Test-Path $Path)) {
+    Write-MyError "輸入的路徑不存在：$Path"
+    return
+  }
+
+  # 取得當前的使用者環境變數 Path
+  $currentPath = [Environment]::GetEnvironmentVariable("Path", "User")
+
+  # 檢查是否已經包含該路徑，避免重複加入
+  if ($currentPath -notlike "*$Path*") {
+    # 將新路徑附加到現有 Path
+    $updatedPath = "$currentPath;$Path"
+
+    # 儲存到使用者環境變數（永久生效）
+    [Environment]::SetEnvironmentVariable("Path", $updatedPath, "User")
+
+  }
+  Write-MySuccess -Icon "已將 $Path 加入使用者的 Path 環境變數!"
+
+  Update-EnvPath
+}
+
 function EnsureAdminRun {
   if (-not (IsAdministrator)) {
     Write-MyError "腳本沒有以管理員權限執行，請以管理員身分重新執行！"
