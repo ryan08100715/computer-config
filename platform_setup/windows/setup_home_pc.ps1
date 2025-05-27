@@ -72,13 +72,18 @@ $apps = @(
   # * 娛樂
   'apps\misc\steam\install.ps1'
   'apps\misc\discord\install.ps1'
-  'apps\misc\radmin\install.ps1'
+  #'apps\misc\radmin\install.ps1'
 
   # * 常用開發工具
   'apps\virtualization\docker_desktop\install.ps1'
   'apps\misc\bruno\install.ps1'
   'apps\misc\drawio\install.ps1'
   'apps\database_manager_tools\heidisql\install.ps1'
+  'apps\database_manager_tools\redis_insight\install.ps1'
+
+  #############
+  # Use Cases #
+  #############
 
   # * Twitch 實況下載工作流程
   'apps\terminal_tools\ytdlp\install.ps1'
