@@ -8,7 +8,8 @@ function Register-MyAutoRunOnStartupTask {
     [string]$AppName,
     [Parameter(Mandatory)]
     [string]$ExePath,
-    [switch]$RunAsAdministrator = $false
+    [switch]$RunAsAdministrator = $false,
+    [switch]$Recreate = $false
   )
 
   EnsureAdminRun
@@ -21,6 +22,9 @@ function Register-MyAutoRunOnStartupTask {
   # 檢查是否已經存在同名任務
   $registeredTask = Get-ScheduledTask -TaskName $taskName -TaskPath $taskPath -ErrorAction SilentlyContinue
   if ($null -ne $registeredTask) {
+    if (-not $Recreate) {
+      return
+    }
     # 刪除已經存在的任務
     Unregister-ScheduledTask -TaskName $taskName -TaskPath $taskPath -Confirm:$false
   }
