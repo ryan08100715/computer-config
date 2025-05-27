@@ -1,0 +1,12 @@
+app.localhost {
+	reverse_proxy host.docker.internal:8080
+}
+
+app1.local {
+	reverse_proxy host.docker.internal:8005
+}
+
+app1.test {
+  tls internal
+	reverse_proxy host.docker.internal:8005
+}
