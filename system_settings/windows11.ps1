@@ -153,6 +153,10 @@ function Setup-Taskbar {
   # Chat (0 = 隱藏, 1 = 顯示)
   $chat = 0
   Set-Registry -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarMn" -Value $chat -Type DWord
+
+  # 顯示工作列應用程式上的閃爍 (0 = 禁用, 1 = 啟用)
+  $flashing = 0
+  Set-Registry -Path "HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" -Name "TaskbarFlashing" -Value $flashing -Type DWord
 }
 
 Sync-ImagesDirectory
