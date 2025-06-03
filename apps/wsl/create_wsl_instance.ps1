@@ -2,7 +2,8 @@
 
 param(
   [Parameter(Mandatory)]
-  [string]$WSLName
+  [string]$WSLName,
+  [switch]$Entry = $true
 )
 
 . $PSScriptRoot\..\..\utils\wsl.ps1
@@ -23,3 +24,7 @@ $wslImagePath = "$(Get-WSLImageDirectory)\$($downloadImageOptions.FileName)"
 
 $wslDirName = $WSLName.ToLower()
 wsl --import $WSLName "$wslDir\$wslDirName" "$wslImagePath"
+
+if ($Entry) {
+  wsl -d $WSLName
+}
