@@ -16,7 +16,7 @@ sudo apt-get update
 sudo apt-get install -y php8.3 php8.3-fpm
 
 # * 安裝 PHP Extensions
-sudo apt-get install -y php8.3-curl php8.3-mbstring php8.3-xml
+sudo apt-get install -y php8.3-curl php8.3-mbstring php8.3-xml php8.3-intl
 sudo apt-get install -y php8.3-sqlite3 php8.3-mysql php8.3-pgsql php8.3-redis
 sudo apt-get install -y php8.3-xdebug php8.3-zip
 
