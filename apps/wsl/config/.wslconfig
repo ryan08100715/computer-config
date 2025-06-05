@@ -1,2 +1,3 @@
 [wsl2]
+memory=6291456000
 networkingMode=mirrored
