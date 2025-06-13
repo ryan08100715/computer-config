@@ -31,6 +31,7 @@ if (-not (Test-Path $optionsDir)) {
 }
 New-Item -ItemType SymbolicLink -Force -Path "$optionsDir\ui.lnf.xml" -Target "$PSScriptRoot\config\ui.lnf.xml" | Out-Null
 New-Item -ItemType SymbolicLink -Force -Path "$optionsDir\advancedSettings.xml" -Target "$PSScriptRoot\config\advancedSettings.xml" | Out-Null
+New-Item -ItemType SymbolicLink -Force -Path "$optionsDir\terminal-font.xml" -Target "$PSScriptRoot\config\terminal-font.xml" | Out-Null
 
 
 Write-MySuccess -Icon "PHPStorm 配置完成"
