@@ -71,7 +71,7 @@ $apps = @(
 
   # * 常用開發工具
   'apps\virtualization\docker_desktop\install.ps1'
-  'apps\misc\bruno\install.ps1'
+  'apps\api_client\bruno\install.ps1'
   'apps\misc\drawio\install.ps1'
   'apps\database_manager_tools\heidisql\install.ps1'
 
