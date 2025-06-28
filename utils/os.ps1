@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh
+
 function Get-MyOSInfo {
   if ($IsWindows) {
     $osVersion = (Get-CimInstance -ClassName Win32_OperatingSystem).Version

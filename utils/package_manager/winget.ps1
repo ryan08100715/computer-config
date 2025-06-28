@@ -1,3 +1,5 @@
+#!/usr/bin/env pwsh
+
 function Install-MyWinGetPackage {
   param (
     [Parameter(Mandatory)]
