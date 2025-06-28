@@ -7,7 +7,7 @@
 $osInfo = Get-MyOSInfo
 
 if ($osInfo.OS -eq 'windows') {
-  Install-MyWinGetPackage -Id "sxyazi.yazi"
+  UnInstall-MyWinGetPackage -Id "sharkdp.bat"
 }
 else {
   Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
