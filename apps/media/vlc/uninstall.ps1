@@ -1,13 +1,14 @@
 #!/usr/bin/env pwsh
 
 . $PSScriptRoot\..\..\..\utils\output.ps1
-. $PSScriptRoot\..\..\..\utils\winget.ps1
+. $PSScriptRoot\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
 
-$PackageName = "VLC"
-$WingetPackageID = "VideoLAN.VLC"
+$osInfo = Get-MyOSInfo
 
-Write-MyInfo "開始執行 $PackageName 解除安裝腳本..."
-
-Uninstall-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
-
-Write-MyInfo ""
+if ($osInfo.OS -eq 'windows') {
+  UnInstall-MyWinGetPackage -Id "VideoLAN.VLC"
+}
+else {
+  Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
+}
