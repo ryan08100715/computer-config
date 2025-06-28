@@ -7,7 +7,7 @@
 $osInfo = Get-MyOSInfo
 
 if ($osInfo.OS -eq 'windows') {
-  Install-MyWinGetPackage -Id "Microsoft.VisualStudioCode"
+  Install-MyWinGetPackage -Id "Microsoft.VisualStudioCode" -Interactive
 }
 else {
   Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"

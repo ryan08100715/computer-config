@@ -1,19 +1,13 @@
 #!/usr/bin/env pwsh
 
 . $PSScriptRoot\..\..\..\utils\output.ps1
-. $PSScriptRoot\..\..\..\utils\utils.ps1
-. $PSScriptRoot\..\..\..\utils\winget.ps1
-
-$PackageName = "Adobe Acrobat Reader"
-
-Write-MyInfo "開始執行 $PackageName 解除安裝腳本..."
+. $PSScriptRoot\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
 
 $osInfo = Get-MyOSInfo
 
 if ($osInfo.OS -eq 'windows') {
-  $WingetPackageID = "Adobe.Acrobat.Reader.64-bit"
-
-  Uninstall-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
+  UnInstall-MyWinGetPackage -Id "Adobe.Acrobat.Reader.64-bit"
 }
 else {
   Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"

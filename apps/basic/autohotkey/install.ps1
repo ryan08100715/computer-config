@@ -25,3 +25,22 @@ if ($osInfo.OS -eq 'windows') {
 else {
   Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
 }
+
+#!/usr/bin/env pwsh
+
+. $PSScriptRoot\..\..\..\utils\output.ps1
+. $PSScriptRoot\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
+
+$osInfo = Get-MyOSInfo
+
+if ($osInfo.OS -eq 'windows') {
+  $wingetId = "AutoHotkey.AutoHotkey"
+  # 安裝 V1 版本
+  Install-MyWinGetPackage -Id $wingetId -Version "1.1.37.02"
+  # 固定版本，避免升級到 V2
+  Pin-MyWinGetPackage -Id $wingetId -PinVersion "1.*"
+}
+else {
+  Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
+}
