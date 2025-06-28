@@ -1,13 +1,14 @@
 #!/usr/bin/env pwsh
 
 . $PSScriptRoot\..\..\..\utils\output.ps1
-. $PSScriptRoot\..\..\..\utils\winget.ps1
+. $PSScriptRoot\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
 
-$PackageName = "VSCode"
-$WingetPackageID = "Microsoft.VisualStudioCode"
+$osInfo = Get-MyOSInfo
 
-Write-MyInfo "開始執行 $PackageName 安裝腳本..."
-
-Install-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID -Override "/silent /suppressmsgboxes /mergetasks='!runcode,addcontextmenufiles,addcontextmenufolders,associatewithfiles,addtopath'"
-
-Write-MyInfo ""
+if ($osInfo.OS -eq 'windows') {
+  Install-MyWinGetPackage -Id "Microsoft.VisualStudioCode"
+}
+else {
+  Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
+}
