@@ -1,19 +1,13 @@
 #!/usr/bin/env pwsh
 
 . $PSScriptRoot\..\..\..\utils\output.ps1
-. $PSScriptRoot\..\..\..\utils\utils.ps1
-. $PSScriptRoot\..\..\..\utils\winget.ps1
-
-$PackageName = "Obsidian"
-
-Write-MyInfo "開始執行 $PackageName 安裝腳本..."
+. $PSScriptRoot\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
 
 $osInfo = Get-MyOSInfo
 
 if ($osInfo.OS -eq 'windows') {
-  $WingetPackageID = "Obsidian.Obsidian"
-
-  Install-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
+  Install-MyWinGetPackage -Id "Obsidian.Obsidian"
 }
 else {
   Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
