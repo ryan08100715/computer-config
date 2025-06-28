@@ -1,13 +1,15 @@
 #!/usr/bin/env pwsh
 
 . $PSScriptRoot\..\..\..\utils\output.ps1
-. $PSScriptRoot\..\..\..\utils\winget.ps1
+. $PSScriptRoot\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
 
-$PackageName = "MEGASync"
-$WingetPackageID = "Mega.MEGASync"
+$osInfo = Get-MyOSInfo
 
-Write-MyInfo "開始執行 $PackageName 安裝腳本..."
+if ($osInfo.OS -eq 'windows') {
+  Install-MyWinGetPackage -Id "Mega.MEGASync"
+}
+else {
+  Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
+}
 
-Install-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID
-
-Write-MyInfo ""

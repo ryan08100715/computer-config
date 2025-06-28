@@ -37,7 +37,7 @@ $apps = @(
   'apps\media\potplayer\install.ps1'
 
   # * 資料同步
-  'apps\cloud_storage\google_driver\install.ps1'
+  'apps\cloud_storage\google_drive\install.ps1'
   'apps\cloud_storage\megasync\install.ps1'
 
   # * 筆記軟體

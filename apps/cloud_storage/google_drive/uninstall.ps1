@@ -7,7 +7,7 @@
 $osInfo = Get-MyOSInfo
 
 if ($osInfo.OS -eq 'windows') {
-  UnInstall-MyWinGetPackage -Id "Microsoft.OneDrive"
+  UnInstall-MyWinGetPackage -Id "Google.GoogleDrive"
 }
 else {
   Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
