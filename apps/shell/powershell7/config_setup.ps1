@@ -2,6 +2,7 @@
 
 . $PSScriptRoot\..\..\..\utils\output.ps1
 . $PSScriptRoot\..\..\..\utils\utils.ps1
+. $PSScriptRoot\..\..\..\utils\file_system.ps1
 
 Write-MyInfo "開始進行 PowerShell 配置..."
 
@@ -10,10 +11,7 @@ EnsureAdminRun
 
 # * 配置設定檔
 $configDir = "$HOME\Documents\PowerShell"
-if (!(Test-Path $configDir)) {
-  New-Item -ItemType Directory -Path $configDir | Out-Null
-}
-New-Item -ItemType SymbolicLink -Force -Path "$configDir\Microsoft.PowerShell_profile.ps1" -Target "$PSScriptRoot\config\Microsoft.PowerShell_profile.ps1" | Out-Null
+Add-MySymbolicLink -Target "$PSScriptRoot\config\Microsoft.PowerShell_profile.ps1" -Destination "$configDir\Microsoft.PowerShell_profile.ps1" -SuppressOutput
 
 Write-MySuccess -Icon "Microsoft.PowerShell_profile.ps1"
 Write-MyInfo ""
