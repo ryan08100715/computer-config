@@ -22,7 +22,7 @@ function Add-MySymbolicLink {
 
   $folder = Split-Path -Path $Destination -Parent
   if (-not (Test-Path $folder)) {
-    New-Item -ItemType Directory -Path $optionsDir | Out-Null
+    New-Item -ItemType Directory -Path $folder | Out-Null
   }
 
   $result = New-Item -ItemType SymbolicLink -Force -Path $Destination -Target $Target
@@ -48,7 +48,7 @@ function Copy-MyItem {
 
   $folder = Split-Path -Path $Destination -Parent
   if (-not (Test-Path $folder)) {
-    New-Item -ItemType Directory -Path $optionsDir | Out-Null
+    New-Item -ItemType Directory -Path $folder | Out-Null
   }
 
   $result = Copy-Item -Force -Path $Target -Destination $Destination
