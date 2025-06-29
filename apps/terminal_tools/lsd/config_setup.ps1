@@ -11,7 +11,7 @@ EnsureAdminRun
 
 # * 配置設定檔
 $configDir = "$HOME\.config\lsd"
-Add-SymbolicLink -Target "$PSScriptRoot\config\config.yaml" -Destination "$configDir\config.yaml" -SuppressOutput
+Add-MySymbolicLink -Target "$PSScriptRoot\config\config.yaml" -Destination "$configDir\config.yaml" -SuppressOutput
 
 Write-MySuccess -Icon "$HOME\.config\lsd\config.yaml"
 Write-MyInfo ""

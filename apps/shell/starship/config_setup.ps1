@@ -11,7 +11,7 @@ EnsureAdminRun
 
 # * 配置設定檔
 $configDir = "$HOME\.config"
-Add-SymbolicLink -Target "$PSScriptRoot\config\starship.toml" -Destination "$configDir\starship.toml" -SuppressOutput
+Add-MySymbolicLink -Target "$PSScriptRoot\config\starship.toml" -Destination "$configDir\starship.toml" -SuppressOutput
 
 Write-MySuccess -Icon "starship.toml"
 Write-MyInfo ""
