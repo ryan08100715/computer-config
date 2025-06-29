@@ -30,3 +30,29 @@ function Add-MySymbolicLink {
     $result
   }
 }
+
+function Copy-MyItem {
+  param (
+    [Parameter(Mandatory)]
+    [string]$Target,
+    [Parameter(Mandatory)]
+    [string]$Destination,
+    [Parameter()]
+    [switch]$SuppressOutput
+  )
+
+  if (-not (Test-Path $Target)) {
+    Write-MyWrite-MyWarning -Icon -Message "Target path '$Target' does not exist."
+    return
+  }
+
+  $folder = Split-Path -Path $Destination -Parent
+  if (-not (Test-Path $folder)) {
+    New-Item -ItemType Directory -Path $optionsDir | Out-Null
+  }
+
+  $result = Copy-Item -Force -Path $Target -Destination $Destination
+  if (-not $SuppressOutput) {
+    $result
+  }
+}
