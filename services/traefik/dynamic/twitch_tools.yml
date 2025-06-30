@@ -1,0 +1,12 @@
+http:
+  routers:
+    twitch-tools:
+      rule: "Host(`twitch.localhost`)"
+      entryPoints:
+        - web
+      service: twitch-tools
+  services:
+    twitch-tools:
+      loadBalancer:
+        servers:
+          - url: "http://host.docker.internal:8005"

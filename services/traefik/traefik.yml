@@ -1,0 +1,18 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
+entryPoints:
+  web:
+    address: ":80"
+
+api:
+  dashboard: true
+  insecure: true # 僅本地測試用
+
+providers:
+  docker:
+    exposedByDefault: false
+    network: traefik-net
+  file:
+    directory: /etc/traefik/dynamic

@@ -1,0 +1,12 @@
+http:
+  routers:
+    nodejs:
+      rule: "Host(`node.localhost`)"
+      entryPoints:
+        - web
+      service: nodejs
+  services:
+    nodejs:
+      loadBalancer:
+        servers:
+          - url: "http://host.docker.internal:3000" # 替換為你的 WSL2 IP
