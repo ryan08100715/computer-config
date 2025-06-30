@@ -60,10 +60,7 @@ $apps = @(
   'apps\terminal_tools\lsd\install.ps1'
   'apps\terminal_tools\lsd\config_setup.ps1'
   'apps\terminal_tools\vim\install.ps1'
-  'apps\terminal_tools\zoxide\install.ps1'
   'apps\terminal_tools\bat\install.ps1'
-  'apps\terminal_tools\fzf\install.ps1'
-  'apps\terminal_tools\ffmpeg\install.ps1'
 
   # * Terminal Emulator
   'apps\terminal\windows_terminal\install.ps1'
@@ -71,11 +68,13 @@ $apps = @(
 
   # * 常用開發工具
   'apps\virtualization\docker_desktop\install.ps1'
-  'apps\api_client\bruno\install.ps1'
+  'apps\api_client\postman\install.ps1'
   'apps\misc\drawio\install.ps1'
   'apps\database_manager_tools\heidisql\install.ps1'
+  'apps\database_manager_tools\dbeaver\install.ps1'
+  'apps\database_manager_tools\redis_insight\install.ps1'
 
-  # * PHP 開發環境
+  # * WSL 開發環境
   'apps\wsl\install.ps1'
   'apps\wsl\config_setup.ps1'
 
