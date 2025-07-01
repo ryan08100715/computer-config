@@ -7,7 +7,7 @@
 $osInfo = Get-MyOSInfo
 
 if ($osInfo.OS -eq 'windows') {
-  Install-MyWinGetPackage -Id "dbeaver.dbeaver"
+  Install-MyWinGetPackage -Id "DBeaver.DBeaver.Community"
 }
 else {
   Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
