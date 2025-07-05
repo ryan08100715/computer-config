@@ -26,6 +26,12 @@ if (Get-Command bat -ErrorAction SilentlyContinue) {
   Set-Alias -Name cat -Value bat
 }
 
+# 如果有安裝 gsudo 則設定別名
+if (Get-Command gsudo -ErrorAction SilentlyContinue) {
+  # 變更 cat 別名為 bat
+  Set-Alias -Name sudo -Value gsudo
+}
+
 ###############
 # CLI 工具加載 #
 ###############
