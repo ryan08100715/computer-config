@@ -15,7 +15,3 @@ sudo usermod -aG sudo ryan
 # 添加 metadata 到 wsl.conf
 WSL_CONF="/etc/wsl.conf"
 echo -e "\n[automount]\noptions = \"metadata\"" >>"$WSL_CONF"
-
-# 配置 git
-SCRIPT_DIR=$(dirname "$0")
-. "$SCRIPT_DIR/../../apps/basic/git/config_setup.sh"
