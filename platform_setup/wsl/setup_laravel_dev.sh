@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-# * 定義 PHP 版本變數
-PHP_VERSION="8.3"
+# * 定義 PHP 版本變數，預設為 8.3，若環境變數有值則使用環境變數
+PHP_VERSION="${PHP_VERSION:-8.3}"
 
 # * 更新系統
 sudo apt-get update
