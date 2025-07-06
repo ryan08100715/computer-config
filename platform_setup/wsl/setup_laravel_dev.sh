@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# * 定義 PHP 版本變數
+PHP_VERSION="8.3"
+
 # * 更新系統
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -13,12 +16,12 @@ sudo add-apt-repository -y ppa:ondrej/php
 sudo apt-get update
 
 # * 安裝 PHP
-sudo apt-get install -y php8.3 php8.3-fpm
+sudo apt-get install -y php${PHP_VERSION} php${PHP_VERSION}-fpm
 
 # * 安裝 PHP Extensions
-sudo apt-get install -y php8.3-curl php8.3-mbstring php8.3-xml php8.3-intl
-sudo apt-get install -y php8.3-sqlite3 php8.3-mysql php8.3-pgsql php8.3-redis
-sudo apt-get install -y php8.3-xdebug php8.3-zip
+sudo apt-get install -y php${PHP_VERSION}-curl php${PHP_VERSION}-mbstring php${PHP_VERSION}-xml php${PHP_VERSION}-intl
+sudo apt-get install -y php${PHP_VERSION}-sqlite3 php${PHP_VERSION}-mysql php${PHP_VERSION}-pgsql php${PHP_VERSION}-redis
+sudo apt-get install -y php${PHP_VERSION}-xdebug php${PHP_VERSION}-zip
 
 # * 安裝 Composer
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
