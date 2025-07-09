@@ -57,6 +57,7 @@ $apps = @(
   'apps\shell\starship\config_setup.ps1'
 
   # * Shell 命令行工具
+  'apps\terminal_tools\gsudo\install.ps1'
   'apps\terminal_tools\lsd\install.ps1'
   'apps\terminal_tools\lsd\config_setup.ps1'
   'apps\terminal_tools\vim\install.ps1'
