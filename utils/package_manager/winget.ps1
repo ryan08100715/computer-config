@@ -7,7 +7,9 @@ function Install-MyWinGetPackage {
     [Parameter()]
     [string]$Version,
     [Parameter()]
-    [switch]$Interactive
+    [switch]$Interactive,
+    [Parameter()]
+    [switch]$SkipDependencies
   )
 
   $options = @(
@@ -19,6 +21,9 @@ function Install-MyWinGetPackage {
   }
   if ($Version) {
     $options += "--version", "$Version"
+  }
+  if ($SkipDependencies) {
+    $options += "--skip-dependencies"
   }
 
   $command = "winget install --id $Id " + ($options -join " ")
