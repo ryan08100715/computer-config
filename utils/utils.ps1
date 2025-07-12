@@ -74,24 +74,6 @@ function CheckInstalledByWingetId {
   return $false
 }
 
-function Install-PackageByWinget {
-  param (
-    [Parameter(Mandatory)]
-    [string]$WingetID,
-    [ValidateNotNullOrEmpty()]
-    [boolean]$interactive = $false
-  )
-
-  if (-not (CheckInstalledByWingetId $WingetID)) {
-    if ($interactive) {
-      winget install -i --id $WingetID
-    }
-    else {
-      winget install --id $WingetID
-    }
-  }
-}
-
 function Test-CommandExist {
   param (
     [Parameter(Mandatory)]
