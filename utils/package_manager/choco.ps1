@@ -25,7 +25,9 @@ function UnInstall-MyChocoPackage {
 
   EnsureAdminRun
 
-  $options = @()
+  $options = @(
+    "--yes"
+  )
 
   $command = "choco uninstall $Id " + ($options -join " ")
 
