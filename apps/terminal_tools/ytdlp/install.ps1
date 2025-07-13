@@ -1,13 +1,30 @@
 #!/usr/bin/env pwsh
 
+param (
+  [Parameter(Mandatory)]
+  [ValidateSet("winget", "choco")]
+  [string]$WinPackageManager = "winget"
+)
+
 . $PSScriptRoot\..\..\..\utils\output.ps1
 . $PSScriptRoot\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\utils\utils.ps1
 . $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
+. $PSScriptRoot\..\..\..\utils\package_manager\choco.ps1
 
 $osInfo = Get-MyOSInfo
 
 if ($osInfo.OS -eq 'windows') {
-  Install-MyWinGetPackage -Id "yt-dlp.yt-dlp" -SkipDependencies
+  if ($WinPackageManager -eq "winget") {
+    Install-MyWinGetPackage -Id "yt-dlp.yt-dlp"
+  }
+  elseif ($WinPackageManager -eq "choco") {
+    Exit-WhenCommandNotExist -Command choco
+    Install-MyChocoPackage -Id "yt-dlp"
+  }
+  else {
+    Write-MyWarning -Icon "不支援的安裝方式: $WinPackageManager"
+  }
 }
 else {
   Write-MyWarning -Icon "不支援的作業系統: $($osInfo.OS)"
