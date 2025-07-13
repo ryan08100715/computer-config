@@ -1,7 +1,7 @@
 #!/usr/bin/env pwsh
 
 param (
-  [Parameter(Mandatory)]
+  [Parameter()]
   [ValidateSet("winget", "choco")]
   [string]$WinPackageManager = "winget"
 )
