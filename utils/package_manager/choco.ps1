@@ -5,12 +5,23 @@
 function Install-MyChocoPackage {
   param (
     [Parameter(Mandatory)]
-    [string]$Id
+    [string]$Id,
+    [Parameter()]
+    [string]$Version,
+    [Parameter()]
+    [switch]$Pin
   )
 
   EnsureAdminRun
 
   $options = @()
+
+  if ($Version) {
+    $options += "--version=$Version"
+  }
+  if ($Pin) {
+    $options += "--pin"
+  }
 
   $command = "choco install $Id " + ($options -join " ")
 
