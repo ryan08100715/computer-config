@@ -10,8 +10,8 @@ Write-MyInfo "> 將 Caps 按鍵改成 Ctrl"
 EnsureAdminRun
 
 # * 安裝 AutoHotkey
-& "$PSScriptRoot\..\..\apps\basic\autohotkey\install.ps1" -Silent
-Write-MySuccess -Icon "安裝 AutoHotkey"
+#& "$PSScriptRoot\..\..\apps\basic\autohotkey\install.ps1" -Silent
+#Write-MySuccess -Icon "安裝 AutoHotkey"
 
 $appsFolder = Get-MyAppsDirectoryPath
 $ahkFileName = "change-cap-to-ctrl.ahk"

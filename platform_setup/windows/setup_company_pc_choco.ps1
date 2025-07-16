@@ -3,9 +3,9 @@
 . $PSScriptRoot\..\..\utils\output.ps1
 
 $requiredApps = @(
-  'apps\basic\git\install.ps1'
+  'apps\basic\git\install.ps1 -WinPackageManager choco'
   'apps\basic\git\config_setup.ps1'
-  'apps\basic\autohotkey\install.ps1'
+  'apps\basic\autohotkey\install.ps1 -WinPackageManager choco'
 )
 
 $personalizations = @(
@@ -25,54 +25,54 @@ $personalizations = @(
   'personalization\pin_home_to_file_manager\setup.ps1'
 
   # * 字型
-  'personalization\fonts\setup.ps1'
+  'personalization\fonts\setup.ps1 -WinPackageManager choco'
 )
 
 $apps = @(
   # * 基本工具
-  'apps\basic\winrar\install.ps1'
-  'apps\basic\power_toys\install.ps1'
+  'apps\basic\winrar\install.ps1 -WinPackageManager choco'
+  'apps\basic\power_toys\install.ps1 -WinPackageManager choco'
   'apps\basic\power_toys\config_setup.ps1'
-  'apps\basic\snipaste\install.ps1'
-  'apps\media\potplayer\install.ps1'
+  'apps\basic\snipaste\install.ps1 -WinPackageManager choco'
+  'apps\media\potplayer\install.ps1 -WinPackageManager choco'
 
   # * 資料同步
-  'apps\cloud_storage\google_drive\install.ps1'
-  'apps\cloud_storage\megasync\install.ps1'
+  'apps\cloud_storage\google_drive\install.ps1 -WinPackageManager choco'
+  'apps\cloud_storage\megasync\install.ps1 -WinPackageManager choco'
 
   # * 筆記軟體
-  'apps\note_taking_software\obsidian\install.ps1'
+  'apps\note_taking_software\obsidian\install.ps1 -WinPackageManager choco'
 
   # * 瀏覽器
-  'apps\browser\google_chrome\install.ps1'
+  'apps\browser\google_chrome\install.ps1 -WinPackageManager choco'
 
   # * 編輯器
-  'apps\editor\vscode\install.ps1'
-  'apps\editor\jetbrains_toolbox\install.ps1'
+  'apps\editor\vscode\install.ps1 -WinPackageManager choco'
+  'apps\editor\jetbrains_toolbox\install.ps1 -WinPackageManager choco'
 
   # * Shell
   'apps\shell\powershell7\install.ps1'
   'apps\shell\powershell7\config_setup.ps1'
-  'apps\shell\starship\install.ps1'
+  'apps\shell\starship\install.ps1 -WinPackageManager choco'
   'apps\shell\starship\config_setup.ps1'
 
   # * Shell 命令行工具
-  'apps\terminal_tools\gsudo\install.ps1'
-  'apps\terminal_tools\lsd\install.ps1'
+  'apps\terminal_tools\gsudo\install.ps1 -WinPackageManager choco'
+  'apps\terminal_tools\lsd\install.ps1 -WinPackageManager choco'
   'apps\terminal_tools\lsd\config_setup.ps1'
-  'apps\terminal_tools\vim\install.ps1'
-  'apps\terminal_tools\bat\install.ps1'
+  'apps\terminal_tools\vim\install.ps1 -WinPackageManager choco'
+  'apps\terminal_tools\bat\install.ps1 -WinPackageManager choco'
 
   # * Terminal Emulator
-  'apps\terminal\windows_terminal\install.ps1'
+  'apps\terminal\windows_terminal\install.ps1 -WinPackageManager choco'
   'apps\terminal\windows_terminal\config_setup.ps1'
 
   # * 常用開發工具
-  'apps\virtualization\docker_desktop\install.ps1'
-  'apps\api_client\postman\install.ps1'
-  'apps\misc\drawio\install.ps1'
-  'apps\database_manager_tools\heidisql\install.ps1'
-  'apps\database_manager_tools\dbeaver\install.ps1'
+  'apps\virtualization\docker_desktop\install.ps1 -WinPackageManager choco'
+  'apps\api_client\postman\install.ps1 -WinPackageManager choco'
+  'apps\misc\drawio\install.ps1 -WinPackageManager choco'
+  'apps\database_manager_tools\heidisql\install.ps1 -WinPackageManager choco'
+  'apps\database_manager_tools\dbeaver\install.ps1 -WinPackageManager choco'
   'apps\database_manager_tools\redis_insight\install.ps1'
 
   # * WSL 開發環境
@@ -80,7 +80,7 @@ $apps = @(
   'apps\wsl\config_setup.ps1'
 
   # * Jellyfin 服務
-  'apps\misc\zerotier_one\install.ps1'
+  'apps\misc\zerotier_one\install.ps1 -WinPackageManager choco'
 )
 
 Clear-Host

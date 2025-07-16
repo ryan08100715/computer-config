@@ -5,6 +5,7 @@
 $requiredApps = @(
   'apps\basic\git\install.ps1'
   'apps\basic\git\config_setup.ps1'
+  'apps\basic\autohotkey\install.ps1'
 )
 
 $personalizations = @(
@@ -30,7 +31,6 @@ $personalizations = @(
 $apps = @(
   # * 基本工具
   'apps\basic\winrar\install.ps1'
-  'apps\basic\autohotkey\install.ps1'
   'apps\basic\power_toys\install.ps1'
   'apps\basic\power_toys\config_setup.ps1'
   'apps\basic\snipaste\install.ps1'

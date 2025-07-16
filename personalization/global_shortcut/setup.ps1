@@ -10,8 +10,8 @@ Write-MyInfo "> 設置 Global Shortcuts"
 EnsureAdminRun
 
 # * 安裝 AutoHotkey
-& "$PSScriptRoot\..\..\apps\basic\autohotkey\install.ps1" -Silent
-Write-MySuccess -Icon "安裝 AutoHotkey"
+#& "$PSScriptRoot\..\..\apps\basic\autohotkey\install.ps1" -Silent
+#Write-MySuccess -Icon "安裝 AutoHotkey"
 
 $appsFolder = Get-MyAppsDirectoryPath
 $ahkFileName = "keyboard_shortcuts.ahk"

@@ -1,7 +1,13 @@
 #!/usr/bin/env pwsh
 
+param (
+  [Parameter()]
+  [ValidateSet("winget", "choco")]
+  [string]$WinPackageManager = "winget"
+)
+
 function Install-JetbrainsMonoNerdFont {
-  & "$PSScriptRoot\..\..\apps\fonts\jetbrains_mono_nerd_font\install.ps1"
+  & "$PSScriptRoot\..\..\apps\fonts\jetbrains_mono_nerd_font\install.ps1 -WinPackageManager $WinPackageManager"
 }
 
 Install-JetbrainsMonoNerdFont
