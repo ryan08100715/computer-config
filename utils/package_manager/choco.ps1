@@ -14,7 +14,7 @@ function Install-MyChocoPackage {
 
   EnsureAdminRun
 
-  $options = @()
+  $options = @("--yes")
 
   if ($Version) {
     $options += "--version=$Version"
