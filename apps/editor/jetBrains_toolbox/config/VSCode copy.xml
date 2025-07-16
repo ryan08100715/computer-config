@@ -1,5 +1,11 @@
 <keymap version="1" name="VSCode copy" parent="VSCode">
   <action id="ActivateBookmarksToolWindow" />
+  <action id="ActivateDebugToolWindow">
+    <keyboard-shortcut first-keystroke="shift ctrl y" />
+    <keyboard-shortcut first-keystroke="shift ctrl d" />
+    <keyboard-shortcut first-keystroke="alt 3" />
+  </action>
+  <action id="ActivateFindToolWindow" />
   <action id="ActivateProjectToolWindow">
     <keyboard-shortcut first-keystroke="shift ctrl e" />
     <keyboard-shortcut first-keystroke="alt 1" />
