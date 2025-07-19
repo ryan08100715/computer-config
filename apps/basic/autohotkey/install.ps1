@@ -19,9 +19,9 @@ if ($osInfo.OS -eq 'windows') {
     $WingetPackageID = "AutoHotkey.AutoHotkey"
 
     # 安裝 V1 版本
-    Install-MyWinGetPackage -PackageName $PackageName -WingetPackageID $WingetPackageID -Version "1.1.37.02" -Silent:$Silent
+    Install-MyWinGetPackage -Id $WingetPackageID -Version "1.1.37.02"
     # 固定版本，避免升級到 V2
-    Pin-MyWinGetPackage -WingetPackageID $WingetPackageID -PinVersion "1.*" -Silent
+    Pin-MyWinGetPackage -Id $WingetPackageID -PinVersion "1.*"
   }
   elseif ($WinPackageManager -eq "choco") {
     Exit-WhenCommandNotExist -Command choco
