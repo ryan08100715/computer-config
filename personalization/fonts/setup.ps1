@@ -7,7 +7,7 @@ param (
 )
 
 function Install-JetbrainsMonoNerdFont {
-  & "$PSScriptRoot\..\..\apps\fonts\jetbrains_mono_nerd_font\install.ps1 -WinPackageManager $WinPackageManager"
+  & "$PSScriptRoot\..\..\apps\fonts\jetbrains_mono_nerd_font\install.ps1"
 }
 
 Install-JetbrainsMonoNerdFont
