@@ -19,13 +19,33 @@
     <keyboard-shortcut first-keystroke="ctrl space" />
     <keyboard-shortcut first-keystroke="alt i" />
   </action>
+  <action id="CollapseRegion">
+    <keyboard-shortcut first-keystroke="shift ctrl open_bracket" />
+    <keyboard-shortcut first-keystroke="alt open_bracket" />
+  </action>
+  <action id="CollapseRegionRecursively">
+    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="ctrl open_bracket" />
+    <keyboard-shortcut first-keystroke="shift alt open_bracket" />
+  </action>
   <action id="EditorDuplicate">
     <keyboard-shortcut first-keystroke="shift alt down" />
     <keyboard-shortcut first-keystroke="shift alt up" />
   </action>
+  <action id="EmmetNextEditPoint" />
+  <action id="EmmetPreviousEditPoint" />
+  <action id="ExpandRegion">
+    <keyboard-shortcut first-keystroke="shift ctrl close_bracket" />
+    <keyboard-shortcut first-keystroke="alt close_bracket" />
+  </action>
+  <action id="ExpandRegionRecursively">
+    <keyboard-shortcut first-keystroke="ctrl k" second-keystroke="ctrl close_bracket" />
+    <keyboard-shortcut first-keystroke="shift alt close_bracket" />
+  </action>
   <action id="GotoSymbol">
     <keyboard-shortcut first-keystroke="shift ctrl o" />
   </action>
+  <action id="NextInlineCompletionSuggestionAction" />
+  <action id="PrevInlineCompletionSuggestionAction" />
   <action id="ShowIntentionActions">
     <keyboard-shortcut first-keystroke="ctrl period" />
     <keyboard-shortcut first-keystroke="alt enter" />
