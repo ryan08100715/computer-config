@@ -9,7 +9,7 @@ distribution=$(detect_os)
 
 if [ "$distribution" = "Ubuntu" ]; then
   # install
-  ppa="ppa:fish-shell/release-3"
+  ppa="ppa:fish-shell/release-4"
   if ! is_ppa_added ${ppa#ppa:}; then
     sudo apt-add-repository -y $ppa
     sudo apt-get update
