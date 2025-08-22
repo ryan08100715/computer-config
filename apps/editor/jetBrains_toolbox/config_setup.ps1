@@ -27,6 +27,7 @@ $optionsDir = Join-Path $ideDir "options"
 Add-MySymbolicLink -Target "$PSScriptRoot\config\ui.lnf.xml" -Destination "$optionsDir\ui.lnf.xml" -SuppressOutput
 Add-MySymbolicLink -Target "$PSScriptRoot\config\advancedSettings.xml" -Destination "$optionsDir\advancedSettings.xml" -SuppressOutput
 Add-MySymbolicLink -Target "$PSScriptRoot\config\terminal-font.xml" -Destination "$optionsDir\terminal-font.xml" -SuppressOutput
+Add-MySymbolicLink -Target "$PSScriptRoot\config\ide.general.xml" -Destination "$optionsDir\ide.general.xml" -SuppressOutput
 
 Write-MySuccess -Icon "PHPStorm 配置完成"
 Write-MyInfo ""
