@@ -11,3 +11,7 @@ end
 if type -q fnm
     fnm env --use-on-cd --shell fish | source
 end
+
+if test -d $HOME/.config/composer/vendor/bin
+    fish_add_path $HOME/.config/composer/vendor/bin
+end
