@@ -14,6 +14,7 @@ $personalizations = @(
 
   # * 快捷鍵
   'personalization\global_shortcut\setup.ps1'
+  'personalization\center_app\setup.ps1'
 
   # * Workspaces
   'personalization\workspaces\setup.ps1'
