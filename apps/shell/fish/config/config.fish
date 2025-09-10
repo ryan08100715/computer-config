@@ -8,7 +8,8 @@ if status is-interactive
 end
 
 # fnm 已安裝才執行
-if type -q fnm
+if test -d $HOME/.local/share/fnm
+    fish_add_path $HOME/.local/share/fnm
     fnm env --use-on-cd --shell fish | source
 end
 
