@@ -37,12 +37,12 @@ $apps = @(
   'apps\media\potplayer\install.ps1'
 
   # * 資料同步
-  'apps\cloud_storage\google_drive\install.ps1'
-  'apps\cloud_storage\megasync\install.ps1'
+  #'apps\cloud_storage\google_drive\install.ps1'
+  #'apps\cloud_storage\megasync\install.ps1'
 
   # * 筆記軟體
-  'apps\note_taking_software\obsidian\install.ps1'
-  'apps\note_taking_software\notion\install.ps1'
+  #'apps\note_taking_software\obsidian\install.ps1'
+  #'apps\note_taking_software\notion\install.ps1'
 
   # * 瀏覽器
   'apps\browser\google_chrome\install.ps1'
@@ -78,10 +78,10 @@ $apps = @(
 
   # * 常用開發工具
   'apps\virtualization\docker_desktop\install.ps1'
-  'apps\api_client\bruno\install.ps1'
-  'apps\api_client\postman\install.ps1'
-  'apps\misc\drawio\install.ps1'
-  'apps\database_manager_tools\heidisql\install.ps1'
+  #'apps\api_client\bruno\install.ps1'
+  #'apps\api_client\postman\install.ps1'
+  #'apps\misc\drawio\install.ps1'
+  #'apps\database_manager_tools\heidisql\install.ps1'
   'apps\database_manager_tools\dbeaver\install.ps1'
   'apps\database_manager_tools\redis_insight\install.ps1'
 
@@ -99,8 +99,9 @@ $apps = @(
   'apps\misc\music_brainz_picard\install.ps1'
 
   # * PHP 開發環境
-  'apps\wsl\install.ps1'
-  'apps\wsl\config_setup.ps1'
+  #'apps\wsl\install.ps1'
+  #'apps\wsl\config_setup.ps1'
+  'apps\programs\herd\install.ps1'
 
   # * Jellyfin 服務
   'apps\virtualization\docker_desktop\install.ps1'
