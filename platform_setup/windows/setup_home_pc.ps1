@@ -44,6 +44,9 @@ $apps = @(
   #'apps\note_taking_software\obsidian\install.ps1'
   #'apps\note_taking_software\notion\install.ps1'
 
+  # * 密碼管理工具
+  'apps\misc\1password\install.ps1'
+
   # * 瀏覽器
   'apps\browser\google_chrome\install.ps1'
 
