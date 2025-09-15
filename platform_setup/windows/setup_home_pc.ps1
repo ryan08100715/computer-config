@@ -52,7 +52,7 @@ $apps = @(
 
   # * 編輯器
   'apps\editor\vscode\windows\install.ps1'
-  'apps\editor\jetbrains_toolbox\install.ps1'
+  'apps\editor\jetbrains_toolbox\windows\install.ps1'
 
   # * Shell
   'apps\shell\powershell7\install.ps1'
