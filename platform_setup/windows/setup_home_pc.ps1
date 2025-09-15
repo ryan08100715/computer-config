@@ -86,7 +86,7 @@ $apps = @(
   #'apps\misc\drawio\install.ps1'
   #'apps\database_manager_tools\heidisql\install.ps1'
   'apps\database_manager_tools\dbeaver\windows\install.ps1'
-  'apps\database_manager_tools\redis_insight\install.ps1'
+  'apps\database_manager_tools\redis_insight\windows\install.ps1'
 
   #############
   # Use Cases #
