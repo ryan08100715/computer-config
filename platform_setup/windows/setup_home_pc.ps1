@@ -80,7 +80,7 @@ $apps = @(
   #'apps\misc\radmin\install.ps1'
 
   # * 常用開發工具
-  'apps\virtualization\docker_desktop\install.ps1'
+  'apps\virtualization\docker_desktop\windows\install.ps1'
   #'apps\api_client\bruno\install.ps1'
   #'apps\api_client\postman\install.ps1'
   #'apps\misc\drawio\install.ps1'
@@ -107,7 +107,7 @@ $apps = @(
   'apps\programs\herd\windows\install.ps1'
 
   # * Jellyfin 服務
-  'apps\virtualization\docker_desktop\install.ps1'
+  'apps\virtualization\docker_desktop\windows\install.ps1'
   'apps\misc\zerotier_one\install.ps1'
 )
 
