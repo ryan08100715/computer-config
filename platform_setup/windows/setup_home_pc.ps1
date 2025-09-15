@@ -48,7 +48,7 @@ $apps = @(
   'apps\misc\1password\install.ps1'
 
   # * 瀏覽器
-  'apps\browser\google_chrome\install.ps1'
+  'apps\browser\google_chrome\windows\install.ps1'
 
   # * 編輯器
   'apps\editor\vscode\install.ps1'
