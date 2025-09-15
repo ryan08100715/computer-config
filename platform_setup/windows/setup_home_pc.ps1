@@ -85,7 +85,7 @@ $apps = @(
   #'apps\api_client\postman\install.ps1'
   #'apps\misc\drawio\install.ps1'
   #'apps\database_manager_tools\heidisql\install.ps1'
-  'apps\database_manager_tools\dbeaver\install.ps1'
+  'apps\database_manager_tools\dbeaver\windows\install.ps1'
   'apps\database_manager_tools\redis_insight\install.ps1'
 
   #############
