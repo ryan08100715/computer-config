@@ -6,11 +6,11 @@ param (
   [string]$WinPackageManager = "winget"
 )
 
-. $PSScriptRoot\..\..\..\utils\output.ps1
-. $PSScriptRoot\..\..\..\utils\os.ps1
-. $PSScriptRoot\..\..\..\utils\utils.ps1
-. $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
-. $PSScriptRoot\..\..\..\utils\package_manager\choco.ps1
+. $PSScriptRoot\..\..\..\..\utils\output.ps1
+. $PSScriptRoot\..\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\..\utils\utils.ps1
+. $PSScriptRoot\..\..\..\..\utils\package_manager\winget.ps1
+. $PSScriptRoot\..\..\..\..\utils\package_manager\choco.ps1
 
 $osInfo = Get-MyOSInfo
 

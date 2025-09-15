@@ -1,8 +1,8 @@
 #!/usr/bin/env pwsh
 
-. $PSScriptRoot\..\..\..\utils\output.ps1
-. $PSScriptRoot\..\..\..\utils\os.ps1
-. $PSScriptRoot\..\..\..\utils\package_manager\winget.ps1
+. $PSScriptRoot\..\..\..\..\utils\output.ps1
+. $PSScriptRoot\..\..\..\..\utils\os.ps1
+. $PSScriptRoot\..\..\..\..\utils\package_manager\winget.ps1
 
 $osInfo = Get-MyOSInfo
 
