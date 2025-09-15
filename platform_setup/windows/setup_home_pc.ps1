@@ -51,7 +51,7 @@ $apps = @(
   'apps\browser\google_chrome\windows\install.ps1'
 
   # * 編輯器
-  'apps\editor\vscode\install.ps1'
+  'apps\editor\vscode\windows\install.ps1'
   'apps\editor\jetbrains_toolbox\install.ps1'
 
   # * Shell
