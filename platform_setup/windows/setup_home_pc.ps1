@@ -34,6 +34,8 @@ $apps = @(
   'apps\basic\power_toys\install.ps1'
   'apps\basic\power_toys\config_setup.ps1'
   'apps\basic\snipaste\install.ps1'
+
+  # * 多媒體
   'apps\media\potplayer\install.ps1'
 
   # * 資料同步
