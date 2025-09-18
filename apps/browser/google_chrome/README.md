@@ -5,3 +5,4 @@
 3. Tampermonkey 腳本需自行安裝
     - Twitch - Disable automatic video downscale
 4. Tampermonkey 需要開發者模式
+5. chrome://flags 裡啟用 Tab mute UI
