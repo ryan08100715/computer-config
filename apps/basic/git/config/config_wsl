@@ -1,0 +1,8 @@
+[user]
+    name = "Ryan WSY"
+    email = "ryan08100715@gmail.com"
+[init]
+	defaultBranch = main
+[core]
+    autocrlf = input
+	sshCommand = ssh.exe
