@@ -16,7 +16,7 @@ $osInfo = Get-MyOSInfo
 
 if ($osInfo.OS -eq 'windows') {
   if ($WinPackageManager -eq "winget") {
-    Install-MyWinGetPackage -Id "liule.Snipaste"
+    Install-MyWinGetPackage -Id "9P1WXPKB68KX"
   }
   elseif ($WinPackageManager -eq "choco") {
     Exit-WhenCommandNotExist -Command choco
