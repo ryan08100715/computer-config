@@ -17,6 +17,8 @@ $osInfo = Get-MyOSInfo
 if ($osInfo.OS -eq 'windows') {
   if ($WinPackageManager -eq "winget") {
     Install-MyWinGetPackage -Id "vim.vim"
+
+    Add-EnvPath -Path "C:\Program Files\Vim\vim91"
   }
   elseif ($WinPackageManager -eq "choco") {
     Exit-WhenCommandNotExist -Command choco
