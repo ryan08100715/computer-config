@@ -12,17 +12,17 @@ Set-PSReadLineKeyHandler -Key Tab -ScriptBlock {
     $line = $null
     $cursor = $null
     [Microsoft.PowerShell.PSConsoleReadLine]::GetBufferState([ref]$line, [ref]$cursor)
-    
+
     # 定義縮寫映射
     $abbreviations = @{
-        'pa' = 'php artisan'
-        'hpa' = 'herd php artisan'
+        'pa' = 'php artisan '
+        'hpa' = 'herd php artisan '
     }
-    
+
     # 檢查當前輸入是否匹配縮寫
     $words = $line.Split(' ')
     $lastWord = $words[-1]
-    
+
     if ($abbreviations.ContainsKey($lastWord)) {
         $expansion = $abbreviations[$lastWord]
         $newLine = $line.Substring(0, $cursor - $lastWord.Length) + $expansion
