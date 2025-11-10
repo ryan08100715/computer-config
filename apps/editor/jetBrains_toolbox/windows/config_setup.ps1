@@ -22,6 +22,10 @@ $ideDir = Join-Path $jetbrainsDir $FolderName
 $keymapsDir = Join-Path $ideDir "keymaps"
 Add-MySymbolicLink -Target "$PSScriptRoot\..\config\VSCode copy.xml" -Destination "$keymapsDir\VSCode copy.xml" -SuppressOutput
 
+# * 配置 Templates
+$templatesDir = Join-Path $ideDir "templates"
+Add-MySymbolicLink -Target "$PSScriptRoot\..\config\templates\PHP.xml" -Destination "$templatesDir\PHP.xml" -SuppressOutput
+
 # * 配置 Options
 $optionsDir = Join-Path $ideDir "options"
 Add-MySymbolicLink -Target "$PSScriptRoot\..\config\ui.lnf.xml" -Destination "$optionsDir\ui.lnf.xml" -SuppressOutput
