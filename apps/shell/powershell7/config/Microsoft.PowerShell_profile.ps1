@@ -55,8 +55,20 @@ if (Get-Command bat -ErrorAction SilentlyContinue) {
 
 # 如果有安裝 gsudo 則設定別名
 if (Get-Command gsudo -ErrorAction SilentlyContinue) {
-  # 變更 cat 別名為 bat
+  # 變更 sudo 別名為 gusdo
   Set-Alias -Name sudo -Value gsudo
+}
+
+# 如果有安裝 herd 則設定別名
+if (Get-Command herd -ErrorAction SilentlyContinue) {
+  # 變更 php 別名為 herd php
+  function php {
+    if (Get-Process -Name "Herd" -ErrorAction SilentlyContinue) {
+      herd php $args
+    } else {
+      & php.bat @args
+    }
+  }
 }
 
 ###############
