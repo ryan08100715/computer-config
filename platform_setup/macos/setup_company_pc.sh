@@ -10,6 +10,8 @@ APPS_DIR="$SCRIPT_DIR/../../apps"
 # * 安裝 homebrew
 bash "$APPS_DIR/basic/homebrew/macos/install.sh"
 
+# 需要先配置 homebrew
+
 ###########
 # 系統工具 #
 ###########

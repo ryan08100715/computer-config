@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPT_DIR=$(dirname "$0")
+SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 
 mkdir -p ~/.config/fish
 ln -sf "$SCRIPT_DIR/../config/config.fish" "$HOME/.config/fish/config.fish"
