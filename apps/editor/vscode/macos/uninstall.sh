@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-brew uninstall visual-studio-code
+brew uninstall --cask visual-studio-code
