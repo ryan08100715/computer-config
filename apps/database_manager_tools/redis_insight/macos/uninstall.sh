@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-brew uninstall redis-insight
+brew uninstall --cask redis-insight
