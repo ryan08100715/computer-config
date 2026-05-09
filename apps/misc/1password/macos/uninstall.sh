@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-brew uninstall 1password
+brew uninstall --cask 1password
