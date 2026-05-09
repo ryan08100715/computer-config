@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-brew uninstall docker-desktop
+brew uninstall --cask docker-desktop
