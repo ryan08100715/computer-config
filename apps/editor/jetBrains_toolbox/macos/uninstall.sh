@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-brew uninstall jetbrains-toolbox
+brew uninstall --cask jetbrains-toolbox
