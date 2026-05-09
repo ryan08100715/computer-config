@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-brew uninstall apidog
+brew uninstall --cask apidog
