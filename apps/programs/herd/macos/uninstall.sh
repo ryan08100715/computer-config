@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-brew uninstall herd
+brew uninstall --cask herd
