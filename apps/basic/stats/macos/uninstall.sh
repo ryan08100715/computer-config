@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-brew uninstall stats
+brew uninstall --cask stats
