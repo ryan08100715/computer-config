@@ -19,6 +19,9 @@ bash "$APPS_DIR/basic/git/macos/config_setup.sh"
 # 系統工具 #
 ###########
 
+# * 安裝 thaw
+bash "$APPS_DIR/basic/thaw/macos/install.sh"
+
 # * 安裝 stats
 bash "$APPS_DIR/basic/stats/macos/install.sh"
 # 手動加載配置文件
@@ -80,6 +83,7 @@ bash "$APPS_DIR/editor/jetBrains_toolbox/macos/install.sh"
 
 # * 安裝 Herd
 bash "$APPS_DIR/programs/herd/macos/install.sh"
+bash "$APPS_DIR/programs/herd/macos/config_setup.sh"
 # 手動安裝 PHP 與 Node
 # 配置 PHP BODY 檔案大小
 
