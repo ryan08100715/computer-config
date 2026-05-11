@@ -1,2 +1,3 @@
 .megaignore
 wsl_images
+.DS_Store

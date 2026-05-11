@@ -19,6 +19,10 @@ bash "$APPS_DIR/basic/git/macos/config_setup.sh"
 # 系統工具 #
 ###########
 
+# * 安裝 alt-tab
+bash "$APPS_DIR/basic/alt-tab/macos/install.sh"
+# 手動匯入配置
+
 # * 手動安裝 Barbee
 # 從 iCloud 配置
 
