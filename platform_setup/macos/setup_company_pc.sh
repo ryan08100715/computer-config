@@ -23,6 +23,9 @@ bash "$APPS_DIR/basic/git/macos/config_setup.sh"
 bash "$APPS_DIR/basic/alt-tab/macos/install.sh"
 # 手動匯入配置
 
+# * 安裝 whichspace
+bash "$APPS_DIR/basic/whichspace/macos/install.sh"
+
 # * 手動安裝 Barbee
 # 從 iCloud 配置
 
