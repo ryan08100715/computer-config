@@ -19,9 +19,8 @@ bash "$APPS_DIR/basic/git/macos/config_setup.sh"
 # 系統工具 #
 ###########
 
-# * 安裝 thaw
-bash "$APPS_DIR/basic/thaw/macos/install.sh"
-# 手動配置
+# * 手動安裝 Barbee
+# 從 iCloud 配置
 
 # * 安裝 stats
 bash "$APPS_DIR/basic/stats/macos/install.sh"
@@ -69,6 +68,8 @@ bash "$APPS_DIR/cloud_storage/google_drive/macos/install.sh"
 bash "$APPS_DIR/misc/1password/macos/install.sh"
 # 手動安裝 1Password Safari Extension
 # 手動啟用 SSH Agent, 確保 設定->一般->「在選單列中保留 1Password」與「登入時開啟」啟用
+
+# * 安裝 Spotify
 
 ###########
 # 程式開發 #
