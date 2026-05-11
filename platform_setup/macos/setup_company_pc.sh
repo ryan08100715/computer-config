@@ -74,6 +74,10 @@ bash "$APPS_DIR/misc/1password/macos/install.sh"
 # 程式開發 #
 ###########
 
+# * 安裝 Claude Code
+bash "$APPS_DIR/ai/claude_code/macos/install.sh"
+# 手動配置
+
 # * 安裝 Visual Studio Code
 bash "$APPS_DIR/editor/vscode/macos/install.sh"
 # 手動登入進行同步配置
