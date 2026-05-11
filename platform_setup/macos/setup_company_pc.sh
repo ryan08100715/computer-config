@@ -21,6 +21,7 @@ bash "$APPS_DIR/basic/git/macos/config_setup.sh"
 
 # * 安裝 thaw
 bash "$APPS_DIR/basic/thaw/macos/install.sh"
+# 手動配置
 
 # * 安裝 stats
 bash "$APPS_DIR/basic/stats/macos/install.sh"
