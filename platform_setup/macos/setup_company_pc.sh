@@ -63,6 +63,7 @@ bash "$APPS_DIR/terminal_tools/eza/macos/install.sh"
 
 # * 安裝 bat
 bash "$APPS_DIR/terminal_tools/bat/macos/install.sh"
+bash "$APPS_DIR/terminal_tools/bat/macos/config_setup.sh"
 
 ################
 # 自己使用的程式 #
