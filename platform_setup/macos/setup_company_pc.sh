@@ -101,6 +101,10 @@ bash "$APPS_DIR/programs/herd/macos/config_setup.sh"
 # 手動安裝 PHP 與 Node
 # 配置 PHP BODY 檔案大小
 
+# * 安裝 fnm
+bash "$APPS_DIR/programs/fnm/macos/install.sh"
+# 手動安裝 node 版本
+
 # * 安裝 DBeaver
 bash "$APPS_DIR/database_manager_tools/dbeaver/macos/install.sh"
 # 手動配置
