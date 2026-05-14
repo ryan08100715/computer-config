@@ -7,11 +7,6 @@ if status is-interactive
   end
 end
 
-# fnm 已安裝才執行
-if type -q fnm
-    fnm env --use-on-cd --shell fish | source
-end
-
 if test -d $HOME/.config/composer/vendor/bin
     fish_add_path $HOME/.config/composer/vendor/bin
 end
