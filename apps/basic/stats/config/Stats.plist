@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Battery_battery_color</key>
+	<false/>
+	<key>Battery_color</key>
+	<false/>
 	<key>CPU_barChart_position</key>
 	<integer>3</integer>
 	<key>CPU_label_position</key>
@@ -13,7 +17,7 @@
 	<key>CPU_pieChart_position</key>
 	<integer>4</integer>
 	<key>CPU_state</key>
-	<true/>
+	<false/>
 	<key>CPU_tachometer_position</key>
 	<integer>5</integer>
 	<key>CPU_widget</key>
@@ -24,12 +28,25 @@
 	<false/>
 	<key>LaunchAtLoginNext</key>
 	<true/>
+	<key>NSOSPLastRootDirectory</key>
+	<data>
+	Ym9va6gCAAAAAAUQQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+	AAAAAAAAAAAAAAAAAIgBAAAEAAAAAwMAAAAAACAFAAAAAQEAAFVzZXJzAAAABAAAAAEB
+	AAByeWFuCQAAAAEBAABEb2N1bWVudHMAAAAMAAAAAQYAABAAAAAgAAAALAAAAAgAAAAE
+	AwAAJ0gAAAAAAAAIAAAABAMAAAT0BAAAAAAACAAAAAQDAAA19AQAAAAAAAwAAAABBgAA
+	VAAAAGQAAAB0AAAACAAAAAAEAABBx7aJYR34rBgAAAABAgAAAgAAAAAAAAAPAAAAAAAA
+	AAAAAAAAAAAAAAAAAAEFAAAIAAAABAMAAAEAAAAAAAAABAAAAAMDAAD1AQAACAAAAAEJ
+	AABmaWxlOi8vLwwAAAABAQAATWFjaW50b3NoIEhECAAAAAQDAAAAUIEYcwAAAAgAAAAA
+	BAAAQce2iPKAAAAkAAAAAQEAAEFEMzNDRjA4LTVGNzMtNDg0QS04NDA5LTEwMzdENDUz
+	OUU5MRgAAAABAgAAgQAAAAEAAADvEwAAAQAAAAAAAAAAAAAAAQAAAAEBAAAvAAAA2AAA
+	AP7///8BAAAAAAAAABEAAAAEEAAAQAAAAAAAAAAFEAAAhAAAAAAAAAAQEAAAqAAAAAAA
+	AABAEAAAmAAAAAAAAAACIAAAfAEAAAAAAAAFIAAA7AAAAAAAAAAQIAAA/AAAAAAAAAAR
+	IAAAMAEAAAAAAAASIAAAEAEAAAAAAAATIAAAIAEAAAAAAAAgIAAAXAEAAAAAAAAwIAAA
+	yAAAAAAAAAABwAAA0AAAAAAAAAARwAAAIAAAAAAAAAASwAAA4AAAAAAAAAAB0AAAyAAA
+	AAAAAAAQ0AAABAAAAAAAAAA=
+	</data>
 	<key>NSStatusItem Preferred Position Battery_battery</key>
-	<real>325</real>
-	<key>NSStatusItem Preferred Position CPU_mini</key>
-	<real>414</real>
-	<key>NSStatusItem Preferred Position RAM_mini</key>
-	<real>367</real>
+	<real>390</real>
 	<key>NSToolbar Configuration eu.exelban.Stats.Settings.Toolbar</key>
 	<dict>
 		<key>TB Display Mode</key>
@@ -45,6 +62,12 @@
 	<string>237 201 728 480 0 0 1470 923 </string>
 	<key>Network_state</key>
 	<false/>
+	<key>RAM_notifications_total_state</key>
+	<false/>
+	<key>RAM_notifications_total_value</key>
+	<integer>81</integer>
+	<key>RAM_state</key>
+	<false/>
 	<key>dockIcon</key>
 	<false/>
 	<key>remote_tokens_migrated_to_keychain</key>
@@ -56,7 +79,7 @@
 	<key>support_ts</key>
 	<integer>1778047370</integer>
 	<key>updater_check_ts</key>
-	<integer>1778142321</integer>
+	<integer>1778660789</integer>
 	<key>version</key>
 	<string>2.12.13</string>
 </dict>
