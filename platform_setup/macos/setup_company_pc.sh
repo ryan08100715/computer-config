@@ -103,6 +103,7 @@ bash "$APPS_DIR/programs/herd/macos/config_setup.sh"
 
 # * 安裝 fnm
 bash "$APPS_DIR/programs/fnm/macos/install.sh"
+bash "$APPS_DIR/programs/fnm/macos/config_setup.sh"
 # 手動安裝 node 版本
 
 # * 安裝 DBeaver
