@@ -60,6 +60,7 @@ bash "$APPS_DIR/terminal/iterm2_terminal/macos/install.sh"
 
 # * 安裝 eza
 bash "$APPS_DIR/terminal_tools/eza/macos/install.sh"
+bash "$APPS_DIR/terminal_tools/eza/macos/config_setup.sh"
 
 # * 安裝 bat
 bash "$APPS_DIR/terminal_tools/bat/macos/install.sh"
