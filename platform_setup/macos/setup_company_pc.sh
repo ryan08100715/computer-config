@@ -75,8 +75,14 @@ bash "$APPS_DIR/cloud_storage/google_drive/macos/install.sh"
 
 # * 安裝 1Password
 bash "$APPS_DIR/misc/1password/macos/install.sh"
-# 手動安裝 1Password Safari Extension
+# 手動安裝 1Password 瀏覽器 Extension
 # 手動啟用 SSH Agent, 確保 設定->一般->「在選單列中保留 1Password」與「登入時開啟」啟用
+
+# * 安裝 Bitwarden
+bash "$APPS_DIR/misc/bitwarden/macos/install.sh"
+# 手動安裝 Bitwarden 瀏覽器 Extension
+# 手動啟用 SSH Agent
+# 縮小至工作列
 
 # * 安裝 Spotify
 
