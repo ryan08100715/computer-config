@@ -83,6 +83,7 @@ bash "$APPS_DIR/misc/bitwarden/macos/install.sh"
 # 手動安裝 Bitwarden 瀏覽器 Extension
 # 手動啟用 SSH Agent
 # 縮小至工作列
+# 手動執行 macos/setup_ssh_agent.sh 進行配置
 
 # * 安裝 Spotify
 
