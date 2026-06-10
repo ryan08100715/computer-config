@@ -19,12 +19,9 @@ bash "$APPS_DIR/basic/git/macos/config_setup.sh"
 # 系統工具 #
 ###########
 
-# * 安裝 alt-tab
-bash "$APPS_DIR/basic/alt-tab/macos/install.sh"
-# 手動匯入配置
-
-# * 安裝 whichspace
-bash "$APPS_DIR/basic/whichspace/macos/install.sh"
+# * 安裝 Aerospace
+bash "$APPS_DIR/basic/aerospace/macos/install.sh"
+bash "$APPS_DIR/basic/aerospace/macos/config_setup.sh"
 
 # * 手動安裝 Barbee
 # 從 iCloud 配置
