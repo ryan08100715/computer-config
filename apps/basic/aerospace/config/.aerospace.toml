@@ -148,8 +148,8 @@ alt-shift-7 = ['move-node-to-workspace 7', 'workspace 7']
 alt-shift-8 = ['move-node-to-workspace 8', 'workspace 8']
 alt-shift-9 = ['move-node-to-workspace 9', 'workspace 9']
 
-alt-shift-left = ['move-node-to-monitor --focus-follows-window left']
-alt-shift-right = ['move-node-to-monitor --focus-follows-window right']
+ctrl-alt-left = ['move-node-to-monitor --focus-follows-window left']
+ctrl-alt-right = ['move-node-to-monitor --focus-follows-window right']
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace-back-and-forth
 #alt-tab = 'workspace-back-and-forth'
