@@ -157,7 +157,7 @@ ctrl-alt-right = ['move-node-to-monitor --focus-follows-window right']
 #alt-shift-tab = 'move-workspace-to-monitor --wrap-around next'
 
 alt-f = 'fullscreen'
-alt-enter = 'exec-and-forget open -n /Users/ryan/Applications/iTerm.app'
+alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
 alt-b = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
