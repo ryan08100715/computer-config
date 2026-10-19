@@ -2,13 +2,19 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSStatusItem Preferred Position Item-0</key>
-	<real>6000</real>
 	<key>allowlist</key>
 	<false/>
 	<key>applications</key>
 	<data>
-	W10=
+	W3siZGlzcGxheU5hbWUiOiIiLCJwYXRoIjoiXC9Vc2Vyc1wvcnlhblwvQXBwbGljYXRp
+	b25zXC9QaHBTdG9ybS5hcHBcL0NvbnRlbnRzXC9NYWNPU1wvcGhwc3Rvcm0iLCJpbmhl
+	cml0IjpmYWxzZSwic2Nyb2xsIjp7InNtb290aFNpbVRyYWNrcGFkIjpmYWxzZSwidG9n
+	Z2xlIjp7ImNvZGUiOjU2LCJ0eXBlIjoia2V5Ym9hcmQifSwic21vb3RoSG9yaXpvbnRh
+	bCI6dHJ1ZSwicmV2ZXJzZVZlcnRpY2FsIjp0cnVlLCJzdGVwIjozMy42LCJzbW9vdGgi
+	OmZhbHNlLCJyZXZlcnNlSG9yaXpvbnRhbCI6dHJ1ZSwiZGVhZFpvbmUiOjEsImR1cmF0
+	aW9uIjo0LjM1LCJzbW9vdGhWZXJ0aWNhbCI6dHJ1ZSwiYmxvY2siOnsiY29kZSI6NTUs
+	InR5cGUiOiJrZXlib2FyZCJ9LCJyZXZlcnNlIjp0cnVlLCJzcGVlZCI6Mi43LCJkYXNo
+	Ijp7ImNvZGUiOjU4LCJ0eXBlIjoia2V5Ym9hcmQifX19XQ==
 	</data>
 	<key>block</key>
 	<data>
@@ -23,15 +29,11 @@
 	eyJ0eXBlIjoia2V5Ym9hcmQiLCJjb2RlIjo1OH0=
 	</data>
 	<key>deadZone</key>
-	<real>1</real>
+	<real>1.0</real>
 	<key>duration</key>
-	<real>4.3499999999999996</real>
+	<real>4.35</real>
 	<key>hideStatusItem</key>
 	<false/>
-	<key>logitechFeatureCache</key>
-	<data>
-	WzUwNDg5LFs2OTE2LDRdXQ==
-	</data>
 	<key>optionsExist</key>
 	<string>optionsExist</string>
 	<key>reverse</key>
@@ -49,12 +51,12 @@
 	<key>smoothVertical</key>
 	<true/>
 	<key>speed</key>
-	<real>2.7000000000000002</real>
+	<real>2.7</real>
 	<key>step</key>
-	<real>33.600000000000001</real>
+	<real>33.6</real>
 	<key>toggle</key>
 	<data>
-	eyJjb2RlIjo1NiwidHlwZSI6ImtleWJvYXJkIn0=
+	eyJ0eXBlIjoia2V5Ym9hcmQiLCJjb2RlIjo1Nn0=
 	</data>
 	<key>updateCheckOnAppStart</key>
 	<false/>
