@@ -159,6 +159,7 @@ ctrl-alt-right = ['move-node-to-monitor --focus-follows-window right']
 alt-f = 'fullscreen'
 alt-enter = 'exec-and-forget open -n /Applications/kitty.app'
 alt-b = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
+#alt-b = 'exec-and-forget open -n /Applications/Firefox.app'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#mode
 alt-shift-semicolon = 'mode service'
