@@ -4,6 +4,35 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "⌘B → Chrome 新視窗、⌘Enter → kitty 新視窗",
+                        "manipulators": [
+                            {
+                                "description": "⌘B → 開 Chrome 新視窗",
+                                "from": {
+                                    "key_code": "b",
+                                    "modifiers": {
+                                        "mandatory": [ "command" ],
+                                        "optional": [ "caps_lock" ]
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -na 'Google Chrome' --args --new-window" }],
+                                "type": "basic"
+                            },
+                            {
+                                "description": "⌘Enter → 開 kitty 新視窗",
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "mandatory": [ "command" ],
+                                        "optional": [ "caps_lock" ]
+                                    }
+                                },
+                                "to": [{ "shell_command": "open -na kitty" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Home → ⌘↑, End → ⌘↓ (page top/bottom)",
                         "manipulators": [
                             {
