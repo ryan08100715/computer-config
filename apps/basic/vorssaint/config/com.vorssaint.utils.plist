@@ -2,16 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSStatusItem Preferred Position VorssaintMenuBarItem.2</key>
-	<real>209</real>
+	<key>NSStatusItem VisibleCC VorssaintMenuBarItem.2</key>
+	<true/>
 	<key>batteryLimitPercent</key>
 	<integer>10</integer>
-	<key>bluetoothSleepRestorePending</key>
-	<false/>
+	<key>brightnessUpdatePromptState</key>
+	<string>handled</string>
 	<key>clipboardHistoryLimit</key>
 	<integer>50</integer>
 	<key>defaultDurationMinutes</key>
 	<integer>0</integer>
+	<key>diskImageInstallerRevealsApp</key>
+	<false/>
+	<key>diskImageInstallerTrashesDownload</key>
+	<true/>
+	<key>diskImageInstallerUseUserApplications</key>
+	<false/>
 	<key>dockClickCycleWindows</key>
 	<false/>
 	<key>dockClickHide</key>
@@ -99,11 +105,11 @@
 	<key>featureAvailable.screenshot</key>
 	<true/>
 	<key>featureAvailable.scrollInverter</key>
-	<false/>
+	<true/>
 	<key>featureAvailable.shelf</key>
 	<false/>
 	<key>featureAvailable.smoothScroll</key>
-	<false/>
+	<true/>
 	<key>featureAvailable.soundOutputSwitcher</key>
 	<false/>
 	<key>featureAvailable.superKey</key>
@@ -134,8 +140,6 @@
 	<string>orange</string>
 	<key>keepAwakeMouseJiggleIntervalMinutes</key>
 	<integer>5</integer>
-	<key>lastUpdateIntroVersion</key>
-	<string>3.3.5</string>
 	<key>launchAtLoginWanted</key>
 	<true/>
 	<key>menuBarBattery</key>
@@ -145,7 +149,7 @@
 	<key>menuBarCPUTemperature</key>
 	<false/>
 	<key>menuBarHideIconWithMetrics</key>
-	<false/>
+	<true/>
 	<key>menuBarMemory</key>
 	<true/>
 	<key>menuBarMemoryStyle</key>
@@ -170,6 +174,8 @@
 	<string>#64D2FF</string>
 	<key>monitorAlertBatteryPercent</key>
 	<integer>15</integer>
+	<key>monitorAlertBatteryTemperatureThreshold</key>
+	<integer>40</integer>
 	<key>monitorAlertCPUTemperatureThreshold</key>
 	<integer>90</integer>
 	<key>monitorAlertCPUThreshold</key>
@@ -183,6 +189,42 @@
 	<key>monitorMemoryMetric</key>
 	<string>used</string>
 	<key>monitorPwrTemperature</key>
+	<true/>
+	<key>notchAgentsEnabled</key>
+	<true/>
+	<key>notchAgentsOptInMigrated</key>
+	<true/>
+	<key>notchCapsuleFitDrop</key>
+	<real>0.0</real>
+	<key>notchCustomWidth</key>
+	<real>420.0</real>
+	<key>notchDefaultProfileInitialized</key>
+	<true/>
+	<key>notchDisplay</key>
+	<string>all</string>
+	<key>notchEnabled</key>
+	<true/>
+	<key>notchHideInFullscreen</key>
+	<false/>
+	<key>notchHidesMenuBarIcon</key>
+	<false/>
+	<key>notchIncludeOtherPlayers</key>
+	<false/>
+	<key>notchKeyboardLightControlHidden</key>
+	<true/>
+	<key>notchLiquidGlassEnabled</key>
+	<false/>
+	<key>notchLyricsOnline</key>
+	<true/>
+	<key>notchOutlineEnabled</key>
+	<false/>
+	<key>notchScratchpadControlHidden</key>
+	<true/>
+	<key>notchSilhouette</key>
+	<string>capsule</string>
+	<key>notchSize</key>
+	<string>spacious</string>
+	<key>notchTranslucentBackground</key>
 	<true/>
 	<key>onboardingStep</key>
 	<integer>0</integer>
@@ -205,27 +247,23 @@
 	<key>screenshotShortcutEnabled</key>
 	<true/>
 	<key>scrollInverterEnabled</key>
-	<true/>
+	<false/>
 	<key>scrollInverterHorizontalEnabled</key>
 	<false/>
-	<key>shelfItems</key>
-	<data>
-	W10=
-	</data>
 	<key>showCountdownInMenuBar</key>
 	<true/>
 	<key>smoothScrollEnabled</key>
-	<true/>
+	<false/>
 	<key>smoothScrollStep</key>
 	<integer>30</integer>
 	<key>statusItemPlacementGeneration</key>
 	<integer>2</integer>
-	<key>supportUpdateIntroVersion</key>
-	<string>3.3.2</string>
+	<key>switcherPreviewExcludedApps</key>
+	<array/>
+	<key>switcherPreviewSize</key>
+	<string>normal</string>
 	<key>unifiedScreenCaptureShortcutMigrated</key>
 	<true/>
-	<key>updateHighlightsSeenVersion</key>
-	<string>3.3.3</string>
 	<key>windowEdgeSnapEnabled</key>
 	<false/>
 </dict>
