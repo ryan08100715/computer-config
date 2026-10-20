@@ -4,14 +4,14 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "⌘B → Chrome 新視窗、⌘Enter → kitty 新視窗",
+                        "description": "⌥B → Chrome 新視窗、⌥Enter → kitty 新視窗",
                         "manipulators": [
                             {
-                                "description": "⌘B → 開 Chrome 新視窗",
+                                "description": "⌥B → 開 Chrome 新視窗",
                                 "from": {
                                     "key_code": "b",
                                     "modifiers": {
-                                        "mandatory": [ "command" ],
+                                        "mandatory": [ "option" ],
                                         "optional": [ "caps_lock" ]
                                     }
                                 },
@@ -19,11 +19,11 @@
                                 "type": "basic"
                             },
                             {
-                                "description": "⌘Enter → 開 kitty 新視窗",
+                                "description": "⌥Enter → 開 kitty 新視窗",
                                 "from": {
                                     "key_code": "return_or_enter",
                                     "modifiers": {
-                                        "mandatory": [ "command" ],
+                                        "mandatory": [ "option" ],
                                         "optional": [ "caps_lock" ]
                                     }
                                 },
